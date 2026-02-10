@@ -1,128 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admojoe Design & Build</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+}
+
 body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    color:#222;
+color:white;
+background:#0f1115;
+overflow-x:hidden;
 }
 
 /* NAV */
 nav{
-    display:flex;
-    justify-content:space-between;
-    padding:25px 60px;
-    position:fixed;
-    width:100%;
-    box-sizing:border-box;
-    color:white;
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:25px 60px;
+z-index:100;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:30px;
+font-size:15px;
 }
 
 /* HERO */
 .hero{
-    position:relative;
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
-    overflow:hidden;
-}
-.gradient-bg{
-    position:absolute;
-    width:200%;
-    height:200%;
-    top:-50%;
-    left:-50%;
-    background: linear-gradient(45deg,
-        #0f2027,
-        #203a43,
-        #2c5364,
-        #000000);
-    background-size:400% 400%;
-    animation:gradientMove 15s ease infinite;
-    z-index:0;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+overflow:hidden;
 }
 
-.hero-content{
-    position:relative;
-    z-index:2;
-    text-align:center;
+/* gradient motion background */
+.hero::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:linear-gradient(
+45deg,
+#0f2027,
+#203a43,
+#2c5364,
+#1f1c2c
+);
+animation:move 15s infinite linear;
+z-index:-1;
 }
 
-@keyframes gradientMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+@keyframes move{
+0%{transform:translate(0,0);}
+50%{transform:translate(-25%,-25%);}
+100%{transform:translate(0,0);}
 }
 
 .hero h1{
-    font-size:64px;
-    margin:0;
-    font-weight:400;
+font-size:72px;
+font-weight:500;
+letter-spacing:1px;
 }
 
 .hero p{
-    margin-top:20px;
-    opacity:.8;
+margin-top:20px;
+font-size:20px;
+opacity:.8;
 }
 
-/* SECTION LIGHT */
-.section{
-    padding:90px 60px;
-    background:#f5f5f5;
+.btn{
+margin-top:40px;
+display:inline-block;
+padding:14px 40px;
+border:1px solid white;
+border-radius:40px;
+text-decoration:none;
+color:white;
+transition:.3s;
 }
 
-.section h2{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-/* SERVICES */
-.services{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:40px;
-    text-align:center;
-}
-
-/* PROJECT GRID */
-.projects-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.project{
-    height:260px;
-    background:#ddd;
-}
-
-/* PROCESS */
-.process{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    text-align:center;
-}
-
-/* ABOUT */
-.about{
-    max-width:800px;
-    margin:auto;
-    text-align:center;
-}
-
-/* CONTACT */
-.contact{
-    text-align:center;
-    padding:80px;
-    background:#111;
-    color:white;
+.btn:hover{
+background:white;
+color:black;
 }
 </style>
 </head>
@@ -130,76 +103,22 @@ nav{
 <body>
 
 <nav>
-<div>Admojoe Design & Build</div>
-<div>Architecture • Interior • Construction</div>
+<div>Admojoe</div>
+<div>
+<a href="#">Home</a>
+<a href="#">Projects</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</div>
 </nav>
 
 <section class="hero">
-    <div class="gradient-bg"></div>
-
-    <div class="hero-content">
-        <h1>Admojoe Design & Build</h1>
-        <p>Architecture • Interior • Construction</p>
-    </div>
-</section>
-
-
-<section class="section">
-<h2>Our Services</h2>
-<div class="services">
 <div>
-<h3>Architecture</h3>
-<p>Residential and commercial architectural design solutions.</p>
+<h1>Admojoe Design & Build</h1>
+<p>Timeless architecture, refined interiors, and precision construction — crafted seamlessly in one integrated vision.</p>
+<a class="btn" href="#">View Projects</a>
 </div>
-<div>
-<h3>Interior Design</h3>
-<p>Functional and aesthetic interior environments.</p>
-</div>
-<div>
-<h3>Construction</h3>
-<p>End-to-end design and build project execution.</p>
-</div>
-</div>
-</section>
-
-<section class="section">
-<h2>Selected Projects</h2>
-<div class="projects-grid">
-<div class="project"></div>
-<div class="project"></div>
-<div class="project"></div>
-<div class="project"></div>
-<div class="project"></div>
-<div class="project"></div>
-</div>
-</section>
-
-<section class="section">
-<h2>Our Process</h2>
-<div class="process">
-<div>Concept</div>
-<div>Design</div>
-<div>Build</div>
-<div>Handover</div>
-</div>
-</section>
-
-<section class="section">
-<div class="about">
-<h2>About Us</h2>
-<p>
-Admojoe Design & Build provides integrated architecture,
-interior, visualization, and construction services for
-residential, commercial, and mixed-use developments.
-</p>
-</div>
-</section>
-
-<section class="contact">
-<h2>Start Your Project With Us</h2>
-<p>hello@admojoe.id</p>
 </section>
 
 </body>
 </html>
-
