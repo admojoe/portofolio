@@ -6,6 +6,7 @@
 <title>Admojoe Design & Build</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -14,45 +15,56 @@ font-family: 'Segoe UI', sans-serif;
 }
 
 body{
-color:white;
 background:#0f1115;
+color:white;
 overflow-x:hidden;
 }
 
-/* NAV */
-nav{
+/* NAVBAR */
+.nav{
 position:fixed;
+top:0;
+left:0;
 width:100%;
+padding:28px 70px;
 display:flex;
 justify-content:space-between;
-padding:25px 60px;
-z-index:100;
+align-items:center;
+z-index:1000;
 }
 
-nav a{
+.menu a{
 color:white;
+margin-left:40px;
 text-decoration:none;
-margin-left:30px;
 font-size:15px;
+opacity:.85;
+transition:.3s;
 }
 
-/* HERO */
+.menu a:hover{
+opacity:1;
+}
+
+/* HERO SECTION */
 .hero{
 height:100vh;
 display:flex;
-align-items:center;
+flex-direction:column;
 justify-content:center;
+align-items:center;
 text-align:center;
 position:relative;
 overflow:hidden;
+padding:0 20px;
 }
 
-/* gradient motion background */
+/* animated luxury gradient */
 .hero::before{
 content:"";
 position:absolute;
-width:200%;
-height:200%;
+width:220%;
+height:220%;
 background:linear-gradient(
 45deg,
 #0f2027,
@@ -60,52 +72,56 @@ background:linear-gradient(
 #2c5364,
 #1f1c2c
 );
-animation:move 15s infinite linear;
+animation:move 18s infinite linear;
 z-index:-1;
 }
 
 @keyframes move{
 0%{transform:translate(0,0);}
-50%{transform:translate(-25%,-25%);}
+50%{transform:translate(-30%,-30%);}
 100%{transform:translate(0,0);}
 }
 
 .hero h1{
-font-size:72px;
+font-size:70px;
 font-weight:500;
 letter-spacing:1px;
+margin-bottom:25px;
 }
 
 .hero p{
-margin-top:20px;
+max-width:800px;
 font-size:20px;
 opacity:.8;
+margin-bottom:45px;
+line-height:1.6;
 }
 
 .btn{
-margin-top:40px;
-display:inline-block;
-padding:14px 40px;
+padding:15px 42px;
 border:1px solid white;
 border-radius:40px;
 text-decoration:none;
 color:white;
-transition:.3s;
+font-size:16px;
+transition:.35s;
 }
 
 .btn:hover{
 background:white;
 color:black;
 }
+
+/* SERVICES */
 .services{
-padding:120px 60px;
-background:#0f1115;
+padding:120px 80px;
 text-align:center;
+background:#0f1115;
 }
 
 .services h2{
 font-size:36px;
-margin-bottom:60px;
+margin-bottom:70px;
 }
 
 .grid{
@@ -115,65 +131,24 @@ gap:40px;
 }
 
 .card{
-padding:50px;
-border:1px solid rgba(255,255,255,.1);
-transition:.3s;
+padding:55px;
+border:1px solid rgba(255,255,255,.12);
+transition:.35s;
 }
 
 .card:hover{
 transform:translateY(-10px);
 border-color:white;
 }
-/* NAV */
-.nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding:25px 60px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+
+.card h3{
+margin-bottom:15px;
+font-size:22px;
 }
 
-.menu a{
-    color:white;
-    margin-left:35px;
-    text-decoration:none;
-    font-size:15px;
-}
-
-/* HERO */
-.hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:0 20px;
-}
-
-.hero h1{
-    font-size:64px;
-    font-weight:500;
-    margin-bottom:20px;
-}
-
-.hero p{
-    max-width:800px;
-    font-size:18px;
-    opacity:0.8;
-    margin-bottom:40px;
-}
-
-.btn{
-    border:1px solid white;
-    padding:14px 36px;
-    border-radius:30px;
-    text-decoration:none;
-    color:white;
-    font-size:16px;
+.card p{
+opacity:.7;
+line-height:1.6;
 }
 
 </style>
@@ -181,32 +156,53 @@ border-color:white;
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav class="nav">
-    <div class="logo">Admojoe</div>
+<div>Admojoe</div>
 
-    <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Projects</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-    </div>
+<div class="menu">
+<a href="#">Home</a>
+<a href="#">Projects</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</div>
 </nav>
-
 
 <!-- HERO -->
 <section class="hero">
-    <h1>Admojoe Design & Build</h1>
+<h1>Admojoe Design & Build</h1>
 
-    <p>
-        Timeless architecture, refined interiors, and precision construction — 
-        crafted seamlessly in one integrated vision.
-    </p>
+<p>
+Timeless architecture, refined interiors, and precision construction — 
+crafted seamlessly in one integrated vision.
+</p>
 
-    <a class="btn" href="#">View Projects</a>
+<a href="#" class="btn">View Projects</a>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+<h2>Our Expertise</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Architecture</h3>
+<p>Concept-driven architectural design crafted with clarity, proportion, and spatial intelligence.</p>
+</div>
+
+<div class="card">
+<h3>Interior Design</h3>
+<p>Refined interior environments combining material elegance, lighting strategy, and functional flow.</p>
+</div>
+
+<div class="card">
+<h3>Design & Build</h3>
+<p>Integrated design-build execution ensuring seamless coordination from concept to construction.</p>
+</div>
+
+</div>
 </section>
 
 </body>
 </html>
-
-
