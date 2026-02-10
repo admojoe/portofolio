@@ -97,6 +97,35 @@ transition:.3s;
 background:white;
 color:black;
 }
+.services{
+padding:120px 60px;
+background:#0f1115;
+text-align:center;
+}
+
+.services h2{
+font-size:36px;
+margin-bottom:60px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+}
+
+.card{
+padding:50px;
+border:1px solid rgba(255,255,255,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:white;
+}
+
+
 </style>
 </head>
 
@@ -119,6 +148,31 @@ color:black;
 <a class="btn" href="#">View Projects</a>
 </div>
 </section>
+<section class="services">
+<div class="container">
+<h2>Our Expertise</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Architecture</h3>
+<p>Thoughtfully designed spaces that balance aesthetics, function, and long-term value.</p>
+</div>
+
+<div class="card">
+<h3>Interior Design</h3>
+<p>Refined interiors crafted through material harmony, lighting precision, and spatial elegance.</p>
+</div>
+
+<div class="card">
+<h3>Construction</h3>
+<p>Precision execution ensuring every design vision is delivered with craftsmanship and reliability.</p>
+</div>
+
+</div>
+</div>
+</section>
 
 </body>
 </html>
+
