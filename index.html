@@ -1,11 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admojoe Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admojoe Studio</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:black;
+    color:white;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    padding:25px 60px;
+    box-sizing:border-box;
+}
+
+nav a{
+    color:white;
+    margin-left:30px;
+    text-decoration:none;
+    opacity:.8;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:80px;
+    line-height:1.1;
+    margin:0;
+    font-weight:300;
+}
+
+.hero p{
+    margin-top:25px;
+    font-size:22px;
+    opacity:.8;
+}
+
+button{
+    margin-top:40px;
+    padding:15px 40px;
+    border-radius:40px;
+    border:1px solid white;
+    background:transparent;
+    color:white;
+    font-size:16px;
+}
+</style>
 </head>
 
 <body>
-    <h1>Admojoe Studio</h1>
-    <p>Architectural Visualization & Interior Design</p>
+
+<nav>
+    <div>Admojoe Architectural Visualization</div>
+    <div>
+        <a href="#">Home</a>
+        <a href="#">Works</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>
+        Architectural Visualization<br>
+        & Interior Design
+    </h1>
+
+    <p>
+        Creating spaces that speak through light, texture, and silence.
+    </p>
+
+    <button>See Projects</button>
+</div>
+
 </body>
 </html>
