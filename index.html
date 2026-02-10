@@ -124,55 +124,89 @@ transition:.3s;
 transform:translateY(-10px);
 border-color:white;
 }
+/* NAV */
+.nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:25px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
+.menu a{
+    color:white;
+    margin-left:35px;
+    text-decoration:none;
+    font-size:15px;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
+}
+
+.hero h1{
+    font-size:64px;
+    font-weight:500;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:800px;
+    font-size:18px;
+    opacity:0.8;
+    margin-bottom:40px;
+}
+
+.btn{
+    border:1px solid white;
+    padding:14px 36px;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    font-size:16px;
+}
 
 </style>
 </head>
 
 <body>
 
-<nav>
-<div>Admojoe</div>
-<div>
-<a href="#">Home</a>
-<a href="#">Projects</a>
-<a href="#">Services</a>
-<a href="#">Contact</a>
-</div>
+<!-- NAVBAR -->
+<nav class="nav">
+    <div class="logo">Admojoe</div>
+
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Projects</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
 </nav>
 
+
+<!-- HERO -->
 <section class="hero">
-<div>
-<h1>Admojoe Design & Build</h1>
-<p>Timeless architecture, refined interiors, and precision construction — crafted seamlessly in one integrated vision.</p>
-<a class="btn" href="#">View Projects</a>
-</div>
-</section>
-<section class="services">
-<div class="container">
-<h2>Our Expertise</h2>
+    <h1>Admojoe Design & Build</h1>
 
-<div class="grid">
+    <p>
+        Timeless architecture, refined interiors, and precision construction — 
+        crafted seamlessly in one integrated vision.
+    </p>
 
-<div class="card">
-<h3>Architecture</h3>
-<p>Thoughtfully designed spaces that balance aesthetics, function, and long-term value.</p>
-</div>
-
-<div class="card">
-<h3>Interior Design</h3>
-<p>Refined interiors crafted through material harmony, lighting precision, and spatial elegance.</p>
-</div>
-
-<div class="card">
-<h3>Construction</h3>
-<p>Precision execution ensuring every design vision is delivered with craftsmanship and reliability.</p>
-</div>
-
-</div>
-</div>
+    <a class="btn" href="#">View Projects</a>
 </section>
 
 </body>
 </html>
+
 
