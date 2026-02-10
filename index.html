@@ -11,7 +11,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: 'Segoe UI', sans-serif;
+font-family:'Segoe UI', sans-serif;
 }
 
 body{
@@ -46,7 +46,7 @@ transition:.3s;
 opacity:1;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -59,27 +59,30 @@ overflow:hidden;
 padding:0 20px;
 }
 
-/* animated luxury gradient */
+/* SMOOTH PREMIUM GRADIENT */
 .hero::before{
 content:"";
 position:absolute;
-width:220%;
-height:220%;
+top:0;
+left:0;
+width:100%;
+height:100%;
 background:linear-gradient(
-45deg,
+270deg,
 #0f2027,
 #203a43,
 #2c5364,
 #1f1c2c
 );
-animation:move 18s infinite linear;
+background-size:400% 400%;
+animation:gradientMove 18s ease infinite;
 z-index:-1;
 }
 
-@keyframes move{
-0%{transform:translate(0,0);}
-50%{transform:translate(-30%,-30%);}
-100%{transform:translate(0,0);}
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 .hero h1{
@@ -156,10 +159,8 @@ line-height:1.6;
 
 <body>
 
-<!-- NAV -->
 <nav class="nav">
 <div>Admojoe</div>
-
 <div class="menu">
 <a href="#">Home</a>
 <a href="#">Projects</a>
@@ -168,24 +169,19 @@ line-height:1.6;
 </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
 <h1>Admojoe Design & Build</h1>
-
 <p>
-Timeless architecture, refined interiors, and precision construction — 
+Timeless architecture, refined interiors, and precision construction —
 crafted seamlessly in one integrated vision.
 </p>
-
 <a href="#" class="btn">View Projects</a>
 </section>
 
-<!-- SERVICES -->
 <section class="services">
 <h2>Our Expertise</h2>
 
 <div class="grid">
-
 <div class="card">
 <h3>Architecture</h3>
 <p>Concept-driven architectural design crafted with clarity, proportion, and spatial intelligence.</p>
@@ -200,8 +196,8 @@ crafted seamlessly in one integrated vision.
 <h3>Design & Build</h3>
 <p>Integrated design-build execution ensuring seamless coordination from concept to construction.</p>
 </div>
-
 </div>
+
 </section>
 
 </body>
