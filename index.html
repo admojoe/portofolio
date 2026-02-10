@@ -6,199 +6,37 @@
 <title>Admojoe Design & Build</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI', sans-serif;
-}
-
 body{
-background:#0f1115;
-color:white;
-overflow-x:hidden;
-}
-
-/* NAVBAR */
-.nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:28px 70px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:1000;
-}
-
-.menu a{
-color:white;
-margin-left:40px;
-text-decoration:none;
-font-size:15px;
-opacity:.85;
-transition:.3s;
-}
-
-.menu a:hover{
-opacity:1;
-}
-
-/* HERO */
-.hero{
+margin:0;
 height:100vh;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
-text-align:center;
-position:relative;
-overflow:hidden;
-padding:0 20px;
-}
-
-/* SMOOTH PREMIUM GRADIENT */
-.hero::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(
-270deg,
-#0f2027,
-#203a43,
-#2c5364,
-#1f1c2c
-);
-background-size:400% 400%;
-animation:gradientMove 18s ease infinite;
-z-index:-1;
-}
-
-@keyframes gradientMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-.hero h1{
-font-size:70px;
-font-weight:500;
-letter-spacing:1px;
-margin-bottom:25px;
-}
-
-.hero p{
-max-width:800px;
-font-size:20px;
-opacity:.8;
-margin-bottom:45px;
-line-height:1.6;
-}
-
-.btn{
-padding:15px 42px;
-border:1px solid white;
-border-radius:40px;
-text-decoration:none;
-color:white;
-font-size:16px;
-transition:.35s;
-}
-
-.btn:hover{
-background:white;
-color:black;
-}
-
-/* SERVICES */
-.services{
-padding:120px 80px;
-text-align:center;
 background:#0f1115;
+color:white;
+font-family:'Segoe UI', sans-serif;
+text-align:center;
 }
 
-.services h2{
-font-size:36px;
-margin-bottom:70px;
+h1{
+font-size:48px;
+margin-bottom:20px;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:40px;
-}
-
-.card{
-padding:55px;
-border:1px solid rgba(255,255,255,.12);
-transition:.35s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-border-color:white;
-}
-
-.card h3{
-margin-bottom:15px;
-font-size:22px;
-}
-
-.card p{
+p{
 opacity:.7;
-line-height:1.6;
+font-size:18px;
 }
-
 </style>
 </head>
 
 <body>
 
-<nav class="nav">
-<div>Admojoe</div>
-<div class="menu">
-<a href="#">Home</a>
-<a href="#">Projects</a>
-<a href="#">Services</a>
-<a href="#">Contact</a>
+<div>
+<h1>Website Under Construction</h1>
+<p>Admojoe Design & Build website is currently being updated.<br>
+Please check back soon.</p>
 </div>
-</nav>
-
-<section class="hero">
-<h1>Admojoe Design & Build</h1>
-<p>
-Timeless architecture, refined interiors, and precision construction —
-crafted seamlessly in one integrated vision.
-</p>
-<a href="#" class="btn">View Projects</a>
-</section>
-
-<section class="services">
-<h2>Our Expertise</h2>
-
-<div class="grid">
-<div class="card">
-<h3>Architecture</h3>
-<p>Concept-driven architectural design crafted with clarity, proportion, and spatial intelligence.</p>
-</div>
-
-<div class="card">
-<h3>Interior Design</h3>
-<p>Refined interior environments combining material elegance, lighting strategy, and functional flow.</p>
-</div>
-
-<div class="card">
-<h3>Design & Build</h3>
-<p>Integrated design-build execution ensuring seamless coordination from concept to construction.</p>
-</div>
-</div>
-
-</section>
 
 </body>
 </html>
