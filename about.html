@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | ADMOJOE - Design & Build</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231C1A18'/%3E%3Ctext x='50' y='65' font-size='75' font-weight='700' text-anchor='middle' fill='%23FFFFFF' font-family='Arial, sans-serif'%3EA%3C/text%3E%3C/svg%3E" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#FFFFFF',
+                            goldLight: '#F3F4F6',
+                            dark: '#1C1A18',
+                            charcoal: '#2A2723',
+                            gray: '#4B463F'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Oswald:wght@300;400;500;700&display=swap" crossorigin>
+    <link rel="preload" as="script" href="https://cdn.tailwindcss.com">
+    
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- Sticky Call Widget -->
+    <div class="fixed right-0 top-1/2 z-40 transform -translate-y-1/2 flex items-center group">
+        <a href="#contact" class="bg-white text-black py-6 px-3 cursor-pointer hover:pl-5 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] relative overflow-hidden rounded-l-lg flex flex-col items-center gap-4">
+            <div class="absolute inset-0 bg-white/20 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+            <div class="flex flex-col items-center gap-4 relative z-10">
+                <i class="ph-fill ph-phone-call text-xl"></i>
+                <span class="vertical-text font-display font-bold tracking-widest text-xs whitespace-nowrap">CONTACT US</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- Scroll To Top -->
+    <button id="scroll-top" class="fixed bottom-8 right-8 z-50 w-16 h-16 flex items-center justify-center opacity-0 translate-y-10 transition-all duration-700 pointer-events-none group">
+        <span class="absolute right-full mr-4 text-[10px] font-bold tracking-[0.2em] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none uppercase">Elevate</span>
+        
+        <div class="absolute inset-0 rounded-full border border-white/5 animate-[spin_10s_linear_infinite] group-hover:border-white/30 transition-colors"></div>
+        
+        <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="28" fill="rgba(20,20,20,0.8)" stroke="rgba(255,255,255,0.05)" stroke-width="1" class="backdrop-blur-sm" />
+            <circle id="scroll-progress-circle" cx="30" cy="30" r="28" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="175.9" stroke-dashoffset="175.9" stroke-linecap="round" class="transition-all duration-75" />
+        </svg>
+        
+        <div class="relative w-8 h-8 rounded-full flex items-center justify-center overflow-hidden">
+            <i class="ph-bold ph-arrow-up text-white text-lg group-hover:-translate-y-10 transition-transform duration-500 absolute"></i>
+            <i class="ph-bold ph-caret-double-up text-white text-lg translate-y-10 group-hover:translate-y-0 transition-transform duration-500 absolute"></i>
+        </div>
+    </button>
+
+    <!-- Navbar Placeholder - Loaded from navbar.html -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- About Section -->
+    <!-- About Section (Brief) -->
+    <section class="py-40 bg-brand-dark relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-dark/80 skew-x-12 transform translate-x-20 pointer-events-none"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div data-aos="fade-right">
+                    <span class="text-white tracking-[0.15em] text-xs font-bold uppercase mb-4 block">About Us</span>
+                    <h2 class="font-display text-5xl md:text-6xl font-bold mb-8 leading-tight">
+                        DESIGNING VISION <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white">BUILDING REALITY</span>
+                    </h2>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        We design interior environments where space, material, lighting, and audio-visual systems work as one cohesive experience. By integrating design and technology from the beginning, we ensure every detail performs seamlessly, both aesthetically and technically.
+                    </p>
+                    
+                    <!-- Feature list removed as requested -->
+
+                    <a href="#about-full" class="inline-block border-b border-gray-500 pb-1 text-gray-300 font-display tracking-widest hover:text-white hover:border-white transition-colors">
+                        READ MORE ABOUT US
+                    </a>
+                </div>
+                
+                <div class="relative" data-aos="fade-left">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4 mt-12">
+                            <img src="assets/images/office_interior.webp" class="w-full h-64 object-cover rounded-lg shadow-lg transition-all duration-700 hover:scale-[1.02]" alt="Site" loading="lazy" decoding="async" width="500" height="256">
+                            <div class="bg-brand-gray p-6 rounded-lg border border-white/5">
+                                <h3 class="font-display text-3xl font-bold text-white mb-1 counter" data-target="24">CRAFTED</h3>
+                                <p class="text-xs uppercase tracking-widest text-gray-500">SPACES</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-brand-gray p-6 rounded-lg border border-white/5 text-right">
+                                <h3 class="font-display text-3xl font-bold text-white mb-1 counter" data-target="150">SPATIAL</h3>
+                                <p class="text-xs uppercase tracking-widest text-gray-500">DESIGN</p>
+                            </div>
+                            <img src="assets/images/office_interior03.webp" class="w-full h-80 object-cover rounded-lg shadow-lg transition-all duration-700 hover:scale-[1.02]" alt="Architect" loading="lazy" decoding="async" width="500" height="320">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Full) -->
+    <section id="about-full" class="py-40 bg-brand-dark relative overflow-hidden border-t border-white/5">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-dark/80 skew-x-12 transform translate-x-20 pointer-events-none"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+                <!-- Left Column: Images + Features -->
+                <div class="space-y-12">
+                    <!-- Images -->
+                    <div class="relative" data-aos="fade-right">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-4 mt-12">
+                                <img src="assets/images/office_interior02.webp" class="w-full h-64 object-cover rounded-lg shadow-lg transition-all duration-700 hover:scale-[1.02]" alt="Interior Design" loading="lazy" decoding="async" width="500" height="256">
+                                <div class="bg-brand-gray p-6 rounded-lg border border-white/5">
+                                    <h3 class="font-display text-3xl font-bold text-white mb-1">CRAFTED</h3>
+                                    <p class="text-xs uppercase tracking-widest text-gray-500">INTERIORS</p>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-brand-gray p-6 rounded-lg border border-white/5 text-right">
+                                    <h3 class="font-display text-3xl font-bold text-white mb-1">SPATIAL</h3>
+                                    <p class="text-xs uppercase tracking-widest text-gray-500">THINKING</p>
+                                </div>
+                                <img src="assets/images/office_interior04.webp" class="w-full h-80 object-cover rounded-lg shadow-lg transition-all duration-700 hover:scale-[1.02]" alt="Audio Visual Space" loading="lazy" decoding="async" width="500" height="320">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features Below Images -->
+                    <div data-aos="fade-up" class="mt-32 pt-24 border-t border-white/5">
+                        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                            <li class="flex flex-col items-center text-center gap-4">
+                                <i class="ph-fill ph-check-circle text-white text-3xl"></i>
+                                <span class="font-display tracking-tight text-xs font-semibold text-gray-300 leading-relaxed">Interior Design & Spatial Planning</span>
+                            </li>
+                            <li class="flex flex-col items-center text-center gap-4">
+                                <i class="ph-fill ph-check-circle text-white text-3xl"></i>
+                                <span class="font-display tracking-tight text-xs font-semibold text-gray-300 leading-relaxed">Integrated Audio Visual Systems</span>
+                            </li>
+                            <li class="flex flex-col items-center text-center gap-4">
+                                <i class="ph-fill ph-check-circle text-white text-3xl"></i>
+                                <span class="font-display tracking-tight text-xs font-semibold text-gray-300 leading-relaxed">Acoustic & Lighting Coordination</span>
+                            </li>
+                            <li class="flex flex-col items-center text-center gap-4">
+                                <i class="ph-fill ph-check-circle text-white text-3xl"></i>
+                                <span class="font-display tracking-tight text-xs font-semibold text-gray-300 leading-relaxed">End-to-End Design & Build Execution</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column: Headline + Text -->
+                <div data-aos="fade-left">
+                    <span class="text-white tracking-[0.15em] text-xs font-bold uppercase mb-4 block">About The Studio</span>
+                    <h2 class="font-display text-5xl md:text-6xl font-bold mb-8 leading-tight">
+                        Integrated Interior <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white">Audio Visual Environments</span>
+                    </h2>
+                    
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        We craft interior environments that are not only visually refined, but technically integrated. We merge spatial design, acoustic strategy, and audio-visual systems into one seamless design & build solution. Every space is engineered to perform — aesthetically, functionally, and technologically.
+                    </p>
+
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        From private residences and commercial interiors to immersive presentation rooms and entertainment spaces, we approach every project with clarity and precision. Our process bridges concept, detailing, and on-site execution — ensuring that design intent translates flawlessly into reality.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#050505] pt-40 pb-8 border-t border-white/5 relative">
+        <div class="container mx-auto px-6 mb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div>
+                    <span class="text-white tracking-[0.3em] text-sm font-bold">GET IN TOUCH</span>
+                    <h2 class="font-display text-5xl font-bold mt-3 mb-8">START YOUR PROJECT</h2>
+                    
+                    <form id="contactForm" action="https://formsubmit.co/admojoe.design@gmail.com" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="group relative">
+                                <input type="text" name="user_name" placeholder="Name" required class="w-full bg-transparent border-b border-gray-700 py-4 focus:outline-none focus:border-white transition-colors text-white placeholder-gray-500">
+                            </div>
+                            <div class="group relative">
+                                <input type="email" name="user_email" placeholder="Email" required class="w-full bg-transparent border-b border-gray-700 py-4 focus:outline-none focus:border-white transition-colors text-white placeholder-gray-500">
+                            </div>
+                        </div>
+                        <div class="group relative">
+                            <select name="service_type" class="w-full bg-transparent border-b border-gray-700 py-4 focus:outline-none focus:border-white transition-colors text-gray-500">
+                                <option>Select Service</option>
+                                <option>Commercial Construction</option>
+                                <option>Residential Build</option>
+                                <option>Renovation</option>
+                            </select>
+                        </div>
+                        <div class="group relative">
+                            <textarea rows="4" name="message" placeholder="Project Details" required class="w-full bg-transparent border-b border-gray-700 py-4 focus:outline-none focus:border-white transition-colors text-white placeholder-gray-500"></textarea>
+                        </div>
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <button type="submit" class="mt-8 btn-magnetic px-10 py-4 border border-white/20 font-display font-bold tracking-widest text-white hover:border-white">
+                            SEND PROPOSAL
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Footer Info -->
+                <div class="flex flex-col justify-between pl-0 lg:pl-12">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-white font-bold mb-6 font-display tracking-widest text-lg">HEADQUARTERS</h4>
+                            <p class="text-gray-400 mb-4 leading-loose">Jawa Barat, Kab. Bekasi, Tarumajaya, 17214</p>
+                            <a href="mailto:info@admojoe.id" class="text-gray-300 block hover:text-white transition-colors mb-2">info@admojoe.id</a>
+                            <a href="tel:+6282113454885" class="text-gray-400 block hover:text-white transition-colors">+6282113454885</a>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold mb-6 font-display tracking-widest text-lg">LINKS</h4>
+                            <ul class="space-y-3 text-gray-400">
+                                <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="ph ph-caret-right"></i> About</a></li>
+                                <li><a href="projects.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="ph ph-caret-right"></i> Projects</a></li>
+                                <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="ph ph-caret-right"></i> Services</a></li>
+                                <li><a href="journal.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="ph ph-caret-right"></i> Journal</a></li>
+                                <li><a href="privacy-policy.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="ph ph-caret-right"></i> Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Big Footer Text -->
+        <div class="border-t border-white/5 pt-8">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-600 text-sm">© 2025 ADMOJOE Design & Build. All rights reserved.</p>
+
+                <div class="text-sm text-gray-500">
+                    Based In Indonesia
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+    <!-- Load Navbar from External File -->
+    <script>
+        async function loadNavbar() {
+            try {
+                const response = await fetch('navbar.html');
+                if (response.ok) {
+                    const html = await response.text();
+                    document.getElementById('navbar-placeholder').innerHTML = html;
+                    if (typeof window.initializeNavbar === 'function') {
+                        window.initializeNavbar();
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading navbar:', error);
+            }
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadNavbar);
+        } else {
+            loadNavbar();
+        }
+    </script>
+
+    <script src="loadProjects.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

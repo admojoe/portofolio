@@ -1,0 +1,22 @@
+{
+  "commercial-hasnur-1": {
+    "webp": "commercial-hasnur-1-400w.webp 400w, commercial-hasnur-1-800w.webp 800w, commercial-hasnur-1-1200w.webp 1200w, commercial-hasnur-1-2400w.webp 2400w",
+    "jpg": "commercial-hasnur-1-400w.jpg 400w, commercial-hasnur-1-800w.jpg 800w, commercial-hasnur-1-1200w.jpg 1200w, commercial-hasnur-1-2400w.jpg 2400w"
+  },
+  "commercial-hasnur-2": {
+    "webp": "commercial-hasnur-2-400w.webp 400w, commercial-hasnur-2-800w.webp 800w, commercial-hasnur-2-1200w.webp 1200w, commercial-hasnur-2-2400w.webp 2400w",
+    "jpg": "commercial-hasnur-2-400w.jpg 400w, commercial-hasnur-2-800w.jpg 800w, commercial-hasnur-2-1200w.jpg 1200w, commercial-hasnur-2-2400w.jpg 2400w"
+  },
+  "commercial-hasnur-3": {
+    "webp": "commercial-hasnur-3-400w.webp 400w, commercial-hasnur-3-800w.webp 800w, commercial-hasnur-3-1200w.webp 1200w, commercial-hasnur-3-2400w.webp 2400w",
+    "jpg": "commercial-hasnur-3-400w.jpg 400w, commercial-hasnur-3-800w.jpg 800w, commercial-hasnur-3-1200w.jpg 1200w, commercial-hasnur-3-2400w.jpg 2400w"
+  },
+  "commercial-hasnur-4": {
+    "webp": "commercial-hasnur-4-400w.webp 400w, commercial-hasnur-4-800w.webp 800w, commercial-hasnur-4-1200w.webp 1200w, commercial-hasnur-4-2400w.webp 2400w",
+    "jpg": "commercial-hasnur-4-400w.jpg 400w, commercial-hasnur-4-800w.jpg 800w, commercial-hasnur-4-1200w.jpg 1200w, commercial-hasnur-4-2400w.jpg 2400w"
+  },
+  "commercial-hasnur-5": {
+    "webp": "commercial-hasnur-5-400w.webp 400w, commercial-hasnur-5-800w.webp 800w, commercial-hasnur-5-1200w.webp 1200w, commercial-hasnur-5-2400w.webp 2400w",
+    "jpg": "commercial-hasnur-5-400w.jpg 400w, commercial-hasnur-5-800w.jpg 800w, commercial-hasnur-5-1200w.jpg 1200w, commercial-hasnur-5-2400w.jpg 2400w"
+  }
+}

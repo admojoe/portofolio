@@ -1,0 +1,79 @@
+<!-- Navbar -->
+<nav id="navbar" class="fixed w-full z-50 transition-colors duration-300 py-6 bg-gradient-to-b from-black/80 to-transparent border-b border-white/10">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+                <!-- Logo (inline SVG for styling control) -->
+                <a href="index.html" class="flex items-center gap-3 group relative z-50 logo-inline" aria-label="ADMOJOE - Design and Build">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 320 64" role="img" aria-labelledby="logoTitle logoDesc" class="logo-svg">
+                            <title id="logoTitle">ADMOJOE - Design and Build</title>
+                            <desc id="logoDesc">Monogram A in a rounded square with ADMOJOE and tagline DESIGN &amp; BUILD</desc>
+
+                            <!-- Monogram block -->
+                            <g transform="translate(0,0)">
+                                <rect x="0" y="0" width="56" height="56" rx="6" ry="6" class="logo-monogram-bg" />
+                                <text x="28" y="36" text-anchor="middle" font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="700" font-size="28" class="logo-monogram-letter">A</text>
+                            </g>
+
+                            <!-- Wordmark -->
+                            <g transform="translate(72,6)" aria-hidden="false">
+                                <text class="logo-wordmark" x="0" y="22">ADMOJOE</text>
+                                <text class="logo-tagline" x="0" y="38" fill="#B08B5A">DESIGN &amp; BUILD</text>
+                            </g>
+                        </svg>
+                </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center gap-10">
+            <a href="about.html" class="nav-link font-display text-sm tracking-widest hover:text-brand-gold transition-colors relative group">
+                ABOUT US
+                <span class="nav-underline absolute bottom-[-4px] left-0 w-0 h-[1px] bg-white transition-all duration-300"></span>
+            </a>
+
+            <!-- Dropdown -->
+            <div class="relative group nav-link-projects">
+                <button class="font-display text-sm tracking-widest hover:text-brand-gold transition-colors flex items-center gap-1 py-4">
+                    PROJECTS <i class="ph ph-caret-down"></i>
+                </button>
+                <div class="dropdown-menu absolute top-full left-0 w-56 bg-brand-charcoal border border-white/10 p-2 shadow-2xl backdrop-blur-xl">
+                    <a href="projects.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors font-display tracking-wide">All Projects</a>
+                    <a href="commercial.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors font-display tracking-wide">Commercial</a>
+                    <a href="residential.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors font-display tracking-wide">Residential</a>
+                    <a href="audio-video.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors font-display tracking-wide">Audio Video</a>
+                </div>
+            </div>
+
+            <a href="services.html" class="nav-link font-display text-sm tracking-widest hover:text-brand-gold transition-colors relative group">
+                SERVICES
+                <span class="nav-underline absolute bottom-[-4px] left-0 w-0 h-[1px] bg-white transition-all duration-300"></span>
+            </a>
+            
+            <a href="journal.html" class="nav-link font-display text-sm tracking-widest hover:text-brand-gold transition-colors relative group">
+                JOURNAL
+                <span class="nav-underline absolute bottom-[-4px] left-0 w-0 h-[1px] bg-white transition-all duration-300"></span>
+            </a>
+            
+            <a href="contact.html" class="btn-magnetic px-8 py-3 border border-white/20 font-display text-sm tracking-widest font-bold rounded-md">
+                CONTACT
+            </a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button id="hamburger-btn" class="lg:hidden hamburger focus:outline-none z-50 relative">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 text-center backdrop-blur-xl">
+        <a href="about.html" class="text-4xl font-display font-bold hover:text-brand-gold mobile-link text-stroke hover:text-stroke-0 transition-all">ABOUT US</a>
+        <a href="projects.html" class="text-4xl font-display font-bold hover:text-brand-gold mobile-link text-stroke hover:text-stroke-0 transition-all">PROJECTS</a>
+        <a href="services.html" class="text-4xl font-display font-bold hover:text-brand-gold mobile-link text-stroke hover:text-stroke-0 transition-all">SERVICES</a>
+        <a href="journal.html" class="text-4xl font-display font-bold hover:text-brand-gold mobile-link text-stroke hover:text-stroke-0 transition-all">JOURNAL</a>
+        <a href="contact.html" class="text-4xl font-display font-bold hover:text-brand-gold mobile-link text-stroke hover:text-stroke-0 transition-all">CONTACT</a>
+        <div class="mobile-link mt-8">
+             <div class="w-12 h-[1px] bg-brand-gold/30 mx-auto mb-4"></div>
+             <a href="tel:+6282113454885" class="text-lg text-brand-gold font-display tracking-widest">+6282113454885</a>
+        </div>
+    </div>
+</nav>

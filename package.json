@@ -1,0 +1,12 @@
+{
+  "name": "image-optimize",
+  "version": "1.0.0",
+  "description": "Generate responsive WebP images for the website",
+  "scripts": {
+    "optimize": "node image-optimize.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "sharp": "^0.32.6"
+  }
+}

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal | ADMOJOE - Design & Build</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231C1A18'/%3E%3Ctext x='50' y='65' font-size='75' font-weight='700' text-anchor='middle' fill='%23FFFFFF' font-family='Arial, sans-serif'%3EA%3C/text%3E%3C/svg%3E" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#FFFFFF',
+                            goldLight: '#F3F4F6',
+                            dark: '#1C1A18',
+                            charcoal: '#2A2723',
+                            gray: '#4B463F'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'blueprint': "linear-gradient(rgba(10,10,10,0.92), rgba(10,10,10,0.96)), url('assets/images/opusdaya01.webp')"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Oswald:wght@300;400;500;700&display=swap" crossorigin>
+    <link rel="preload" as="script" href="https://cdn.tailwindcss.com">
+    
+    <!-- Preload Blog Section Images -->
+    <link rel="preload" as="image" href="https://raw.githubusercontent.com/farazc60/Project-Images/refs/heads/main/Apex%20Construction%20Website%20Template/5-star-hotel.jpg">
+    <link rel="preload" as="image" href="https://raw.githubusercontent.com/farazc60/Project-Images/refs/heads/main/Apex%20Construction%20Website%20Template/high-tower-with-futuristic-design.jpg">
+    <link rel="preload" as="image" href="https://raw.githubusercontent.com/farazc60/Project-Images/refs/heads/main/Apex%20Construction%20Website%20Template/historic-building-restoration.jpg">
+    
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- Sticky Call Widget -->
+    <div class="fixed right-0 top-1/2 z-40 transform -translate-y-1/2 flex items-center group">
+        <a href="#contact" class="bg-white text-black py-6 px-3 cursor-pointer hover:pl-5 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] relative overflow-hidden rounded-l-lg flex flex-col items-center gap-4">
+            <div class="absolute inset-0 bg-white/20 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+            <div class="flex flex-col items-center gap-4 relative z-10">
+                <i class="ph-fill ph-phone-call text-xl"></i>
+                <span class="vertical-text font-display font-bold tracking-widest text-xs whitespace-nowrap">CONTACT US</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- Scroll To Top -->
+    <button id="scroll-top" class="fixed bottom-8 right-8 z-50 w-16 h-16 flex items-center justify-center opacity-0 translate-y-10 transition-all duration-700 pointer-events-none group">
+        <span class="absolute right-full mr-4 text-[10px] font-bold tracking-[0.2em] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none uppercase">Elevate</span>
+        <div class="absolute inset-0 rounded-full border border-white/5 animate-[spin_10s_linear_infinite] group-hover:border-white/30 transition-colors"></div>
+        <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="28" fill="rgba(20,20,20,0.8)" stroke="rgba(255,255,255,0.05)" stroke-width="1" class="backdrop-blur-sm" />
+            <circle id="scroll-progress-circle" cx="30" cy="30" r="28" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="175.9" stroke-dashoffset="175.9" stroke-linecap="round" class="transition-all duration-75" />
+        </svg>
+        <div class="relative w-8 h-8 rounded-full flex items-center justify-center overflow-hidden">
+            <i class="ph-bold ph-arrow-up text-white text-lg group-hover:-translate-y-10 transition-transform duration-500 absolute"></i>
+            <i class="ph-bold ph-caret-double-up text-white text-lg translate-y-10 group-hover:translate-y-0 transition-transform duration-500 absolute"></i>
+        </div>
+    </button>
+
+    <!-- Navbar Placeholder - Loaded from navbar.html -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-32 bg-brand-charcoal">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between lg:items-end mb-16 gap-6" data-aos="fade-up">
+                <div>
+                    <span class="text-white tracking-[0.15em] text-sm font-semibold">INSIGHTS</span>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mt-3">JOURNAL & ARTICLES</h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[350px]">
+                <!-- Article 1: Big Feature (Spans 2x2 on desktop) -->
+                <article class="group relative md:col-span-2 md:row-span-2 overflow-hidden rounded-sm cursor-pointer border border-white/5">
+                    <img src="assets/images/journal/auditorium/journal-auditorium.webp" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Sustainable Architecture" loading="eager" fetchpriority="high" decoding="async" width="700" height="700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity"></div>
+                    <div class="absolute inset-0 p-8 md:p-12 flex flex-col justify-end items-start">
+                         <span class="bg-white text-black text-xs font-bold px-3 py-1 mb-4 uppercase tracking-widest">Featured Story</span>
+                         <h3 class="font-display text-3xl md:text-5xl font-bold text-white mb-4 leading-none group-hover:text-white transition-colors">THE MAKING OF A SPACE</h3>
+                         <p class="text-gray-400 line-clamp-2 max-w-lg mt-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">Exploring the transformation of an auditorium interior from construction to completion.</p>
+                         <a href="journal/auditorium-interior.html" class="mt-8 inline-flex items-center gap-3 text-sm font-bold tracking-widest text-white border-b border-white pb-1 hover:border-opacity-50 transition-all">
+                            READ ARTICLE <i class="ph-bold ph-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                         </a>
+                    </div>
+                </article>
+
+                <!-- Article 2: Small Corner Card (Now: New Case Study placeholder) -->
+                <article class="group relative overflow-hidden rounded-sm cursor-pointer border border-white/5 minimalist-card">
+                    <div class="relative z-10 p-10 md:p-12 lg:p-16 minimalist-card__content text-left flex items-center">
+                        <div>
+                            <i class="ph-duotone ph-newspaper text-4xl text-gray-300 mb-4"></i>
+                            <h3 class="font-display text-2xl font-bold text-white uppercase mb-1">NEW CASE STUDY</h3>
+                            <p class="text-gray-300 text-sm font-semibold tracking-widest">Coming Soon</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3: Minimalist Solid-Color Block -->
+                <article class="group relative overflow-hidden rounded-sm cursor-pointer border border-white/5 minimalist-card">
+                    <div class="relative z-10 p-10 md:p-12 lg:p-16 minimalist-card__content text-left">
+                        <i class="ph-duotone ph-newspaper text-5xl text-gray-300 mb-6"></i>
+                        <h3 class="font-display text-3xl font-bold text-white uppercase mb-3">EXTENDED PORTFOLIO</h3>
+                        <p class="text-gray-300 text-sm max-w-md mb-6">Explore selected works and full case studies on Behance.</p>
+                        <a href="https://www.behance.net/admojoe" target="_blank" rel="noopener noreferrer" class="text-sm font-bold tracking-widest text-gray-300 hover:text-white transition-colors inline-flex items-center gap-2">VIEW ON BEHANCE <i class="ph-bold ph-arrow-up-right text-sm"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Article 4: Wide Editorial Banner -->
+                <article class="group relative md:col-span-3 overflow-hidden rounded-sm cursor-pointer border border-white/5">
+                    <img src="assets/images/journal/auditorium/journal-auditorium-banner.webp" alt="Timeless Design and Architecture" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" loading="eager" decoding="async" width="1400" height="350">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <div class="absolute inset-0 p-8 md:p-16 flex flex-col justify-end h-full min-h-[350px]">
+                        <span class="text-xs text-gray-400 font-display tracking-widest uppercase mb-4">Design Trends</span>
+                        <h3 class="font-display text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">TIMELESS DESIGN AND ARCHITECTURE</h3>
+                        <p class="text-gray-300 text-sm md:text-base mb-8 leading-relaxed max-w-2xl">Explore how we create spaces that combine form and function, showcasing beautiful architecture that stands the test of time.</p>
+                        <!-- CTA removed as requested -->
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-32 bg-blueprint bg-fixed bg-cover relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center border border-white/5 bg-white/5 backdrop-blur-sm p-12 rounded-2xl">
+                <i class="ph-fill ph-quotes text-6xl text-white mb-8 inline-block opacity-60"></i>
+                
+                <div class="swiper testimonialSwiper pb-12">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <p class="font-display text-2xl md:text-3xl leading-relaxed font-light italic mb-8 text-white">
+                                "From concept to completion, every detail is shaped through thoughtful design and precise execution. We create spaces that are both functional and timeless."
+                            </p>
+                            <h4 class="font-bold text-white text-lg tracking-widest uppercase">Gilang</h4>
+                            <p class="text-sm text-gray-500">Founder, Gilang Studio Architect</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="font-display text-2xl md:text-3xl leading-relaxed font-light italic mb-8 text-white">
+                                "A seamless design & build process that transforms ideas into meaningful spaces, delivered with clarity, craftsmanship, and lasting value."
+                            </p>
+                            <h4 class="font-bold text-white text-lg tracking-widest uppercase">Roy Ananta</h4>
+                            <p class="text-sm text-gray-500">CEO, PT Desibel</p>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination testimonial-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#050505] pt-32 pb-8 border-t border-white/5 relative">
+        <div class="container mx-auto px-6 mb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div>
+                    <span class="text-white tracking-[0.3em] text-sm font-bold">GET IN TOUCH</span>
+                    <h2 class="font-display text-5xl font-bold mt-3 mb-8">START YOUR PROJECT</h2>
+                    
+                    <form id="contactForm" action="https://formsubmit.co/admojoe.design@gmail.com" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="group relative">
+                                <input type="text" name="user_name" placeholder="Name" required class="w-full bg-transparent border-b border-gray-700 py-4 focus:outline-none focus:border-white transition-colors text-white placeholder-gray-500">
+                            </div>
+                            <div class="group relative">
+                                <input type="email" name="user_email" placeholder="Email" required class="w-full bg-transparent border-b border-gray-700 py-4 focus:outline-none focus:border-white transition-colors text-white placeholder-gray-500">
+                            </div>
+                        </div>
+                        <div class="group relative">
+                            <select name="service_type" class="w-full bg-transparent border-b border-gray-700 py-4 focus:outline-none focus:border-white transition-colors text-gray-500">
+                                <option>Select Service</option>
+                                <option>Commercial Construction</option>
+                                <option>Residential Build</option>
+                                <option>Renovation</option>
+                            </select>
+                        </div>
+                        <div class="group relative">
+                            <textarea name="message" rows="4" placeholder="Project Details" required class="w-full bg-transparent border-b border-gray-700 py-4 focus:outline-none focus:border-white transition-colors text-white placeholder-gray-500"></textarea>
+                        </div>
+                        <button type="submit" class="mt-8 btn-magnetic px-10 py-4 border border-white/20 font-display font-bold tracking-widest text-white hover:border-white">
+                            SEND PROPOSAL
+                        </button>
+                        <!-- FormSubmit.co Settings -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                    </form>
+                </div>
+
+                <!-- Footer Info -->
+                <div class="flex flex-col justify-between pl-0 lg:pl-12">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-white font-bold mb-6 font-display tracking-widest text-lg">HEADQUARTERS</h4>
+                            <p class="text-gray-400 mb-4 leading-loose">Jawa Barat, Kab. Bekasi, Tarumajaya, 17214</p>
+                            <a href="mailto:info@admojoe.id" class="text-gray-300 block hover:text-white transition-colors mb-2">info@admojoe.id</a>
+                            <a href="tel:+6282113454885" class="text-gray-400 block hover:text-white transition-colors">+6282113454885</a>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold mb-6 font-display tracking-widest text-lg">LINKS</h4>
+                            <ul class="space-y-3 text-gray-400">
+                                <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="ph ph-caret-right"></i> About</a></li>
+                                <li><a href="projects.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="ph ph-caret-right"></i> Projects</a></li>
+                                <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="ph ph-caret-right"></i> Services</a></li>
+                                <li><a href="journal.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="ph ph-caret-right"></i> Journal</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Big Footer Text -->
+        <div class="border-t border-white/5 pt-8">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-600 text-sm">© 2025 ADMOJOE Design & Build. All rights reserved.</p>
+                <div class="text-sm text-gray-500">
+                    Based In Indonesia
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+    <!-- Load Navbar from External File -->
+    <script>
+        async function loadNavbar() {
+            try {
+                const response = await fetch('navbar.html');
+                if (response.ok) {
+                    const html = await response.text();
+                    document.getElementById('navbar-placeholder').innerHTML = html;
+                    if (typeof window.initializeNavbar === 'function') {
+                        window.initializeNavbar();
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading navbar:', error);
+            }
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadNavbar);
+        } else {
+            loadNavbar();
+        }
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+    <script>
+        // Create global flag to track EmailJS readiness
+        window.emailjsReady = false;
+        
+        // Wait for emailjs to load properly
+        var checkEmailJS = setInterval(function() {
+            if (typeof emailjs !== 'undefined') {
+                try {
+                    emailjs.init('LSEp-KnqBcwjeG9sZ');
+                    window.emailjsReady = true;
+                    console.log('✓ EmailJS initialized successfully');
+                    clearInterval(checkEmailJS);
+                } catch (e) {
+                    console.warn('EmailJS init failed, retrying...', e);
+                }
+            }
+        }, 100);
+        
+        // Fallback timeout - wait longer
+        setTimeout(function() {
+            if (!window.emailjsReady && typeof emailjs !== 'undefined') {
+                try {
+                    emailjs.init('LSEp-KnqBcwjeG9sZ');
+                    window.emailjsReady = true;
+                    console.log('✓ EmailJS initialized (fallback)');
+                } catch (e) {
+                    console.error('EmailJS initialization failed', e);
+                }
+            }
+            clearInterval(checkEmailJS);
+        }, 5000);
+    </script>
+    <script src="loadProjects.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

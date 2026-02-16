@@ -1,0 +1,452 @@
+body {
+    background-color: #1C1A18;
+    color: #D0D0D0;
+    overflow-x: hidden;
+    transition: color 0.3s ease;
+}
+
+/* Global Text Transition */
+* {
+    transition: color 0.3s ease;
+}
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFFFFF;
+    border-radius: 2px;
+}
+
+/* Hamburger Animation */
+.hamburger .line {
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    display: block;
+    margin: 6px auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger.is-active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-active .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Text Stroke */
+.text-stroke {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+    color: transparent;
+}
+
+/* Magnetic Border */
+.btn-magnetic {
+    position: relative;
+    background: transparent;
+    color: #fff;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-magnetic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-magnetic:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.btn-magnetic:hover {
+    color: #000;
+}
+
+/* Project Item Responsive Styles */
+.project-item {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-item picture,
+.project-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Portrait orientation: adjust crop position to preserve face/detail */
+.project-item.portrait picture,
+.project-item.portrait img {
+    object-position: center top;
+}
+
+/* Landscape orientation: center crop */
+.project-item.landscape picture,
+.project-item.landscape img {
+    object-position: center center;
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Swiper Fixes & Effects */
+.swiper-pagination-bullet {
+    background: #fff;
+    opacity: 0.3;
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+    background: #FFFFFF;
+    opacity: 1;
+    width: 30px;
+    border-radius: 5px;
+}
+
+/* Custom Pagination Positioning for Testimonials */
+.testimonial-pagination {
+    position: relative !important;
+    margin-top: 30px !important;
+    bottom: 0 !important;
+    display: flex;
+    justify-content: center;
+}
+
+/* Testimonial glass style: frosted panel with soft dark tint to keep text readable */
+.testimonial-glass {
+    background: linear-gradient(180deg, rgba(10,10,10,0.25), rgba(10,10,10,0.08));
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    backdrop-filter: blur(10px) saturate(130%);
+    -webkit-backdrop-filter: blur(10px) saturate(130%);
+}
+
+.testimonial-glass i.ph-fill.ph-quotes { filter: drop-shadow(0 6px 18px rgba(0,0,0,0.6)); }
+
+/* Slight brighten of blueprint background inside testimonial section */
+.bg-blueprint { background-position: center; background-size: cover; }
+
+/* Call Widget Vertical */
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+}
+
+/* Mobile Menu Premium Animation */
+#mobile-menu {
+    clip-path: circle(0px at calc(100% - 40px) 40px);
+    transition: clip-path 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+    background: rgba(10, 10, 10, 0.98);
+    height: 100dvh;
+    z-index: 45;
+}
+
+#mobile-menu.is-open {
+    clip-path: circle(150% at calc(100% - 40px) 40px);
+}
+
+/* Staggered Animation for Links */
+.mobile-link {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#mobile-menu.is-open .mobile-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#mobile-menu.is-open .mobile-link:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+#mobile-menu.is-open .mobile-link:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+#mobile-menu.is-open .mobile-link:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+#mobile-menu.is-open .mobile-link:nth-child(4) {
+    transition-delay: 0.5s;
+}
+
+#mobile-menu.is-open .mobile-link:nth-child(5) {
+    transition-delay: 0.6s;
+}
+
+/* Projects Filter */
+.filter-btn {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+}
+
+.filter-btn.active {
+    border-color: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+}
+
+.filter-btn:not(.active) {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: rgb(156, 163, 175) !important;
+}
+
+.filter-btn:hover {
+    transform: translateY(-3px);
+    color: #000000 !important;
+}
+
+/* Logo / Brand typography per user direction */
+.brand-name {
+    font-family: 'Oswald', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em; /* agak lebar */
+    color: #ffffff; /* putih solid */
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.65); /* visual dominant */
+}
+
+.brand-tagline {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600; /* medium */
+    font-size: 0.625rem; /* lebih kecil */
+    text-transform: uppercase;
+    letter-spacing: 0.14em; /* sedikit tracking lebih lebar */
+    color: #909090; /* light gray */
+    margin-top: -2px;
+}
+
+/* Responsive tweaks */
+@media (min-width: 1024px) {
+    .brand-name { font-size: 1.15rem; }
+    .brand-tagline { font-size: 0.72rem; }
+}
+
+/* Inline SVG logo styling */
+.logo-inline .logo-svg { height: 64px; width: auto; display: block; }
+.logo-inline .logo-monogram-bg { fill: #0e0e0e; stroke: #2a2a2a; stroke-width: 1; }
+.logo-inline .logo-monogram-letter { fill: #ffffff; font-family: Oswald, 'Arial Narrow', sans-serif; font-weight:700; font-size:32px; }
+.logo-inline .logo-wordmark {
+    font-family: Oswald, 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: 3.5px;
+    fill: #ffffff;
+}
+ .logo-inline .logo-tagline {
+     font-family: Manrope, sans-serif;
+     font-weight: 600;
+     font-size: 12px; /* slightly reduced for better balance */
+    letter-spacing: 2.6px; /* wider tracking */
+
+/* Example: change logo colors when navbar becomes scrolled (the site already toggles bg classes) */
+.scrolled #navbar .logo-inline .logo-wordmark { fill: #ffffff; }
+.scrolled #navbar .logo-inline .logo-tagline { fill: #909090; }
+
+/* Image Loading Optimization */
+img {
+    will-change: transform;
+    contain: layout style paint;
+}
+
+img[loading="eager"],
+img[loading="lazy"] {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Blog section image optimization */
+#blog img {
+    will-change: transform;
+    transform: translate3d(0, 0, 0); /* GPU acceleration */
+}
+
+/* Minimalist solid-color card for editorial secondary block */
+.minimalist-card {
+    background: #252525; /* slightly different from main background */
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+    transition: background-color 180ms linear, transform 180ms ease;
+}
+.minimalist-card:hover {
+    background: #2b2b2b; /* very subtle brighten on hover */
+}
+.minimalist-card__content i {
+    color: rgba(255,255,255,0.18);
+}
+.minimalist-card__content h3 {
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+.minimalist-card__content p {
+    color: rgba(255,255,255,0.65);
+}
+.minimalist-card__content a {
+    color: rgba(255,255,255,0.72);
+}
+.minimalist-card__content a:hover {
+    color: #FFFFFF;
+}
+
+/* Active Nav Link Styling */
+.nav-link.nav-active {
+    color: #ffffff !important;
+}
+
+.nav-link-projects.nav-active button {
+    color: #ffffff !important;
+}
+
+.nav-link.nav-active .nav-underline {
+    width: 100% !important;
+}
+
+.nav-link-projects.nav-active .nav-underline {
+    width: 100% !important;
+}
+
+.nav-link:hover .nav-underline {
+    width: 100%;
+}
+
+.nav-link-projects:hover .nav-underline {
+    width: 100%;
+}
+
+/* SweetAlert Button Styling */
+.swal2-confirm {
+    background-color: #FFFFFF !important;
+    color: #1a1a1a !important;
+    font-weight: bold !important;
+    padding: 12px 35px !important;
+    border-radius: 4px !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    min-height: 44px !important;
+}
+
+.swal2-confirm span {
+    color: #1a1a1a !important;
+    font-weight: bold !important;
+    display: inline-block !important;
+}
+
+/* Sliding marquee animation - smooth left scrolling */
+@keyframes slidingLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-1200px);
+    }
+}
+
+/* Marquee container styling and animation */
+.marquee-container {
+    animation: slidingLeft 25s linear infinite;
+}
+
+.marquee-container:hover {
+    animation-play-state: paused;
+}
+
+/* Running marquee typography - editorial, soft, studio-level */
+.running-text {
+    font-family: 'Manrope', 'Poppins', 'Montserrat', sans-serif;
+    font-weight: 600; /* medium-bold feel */
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.1em; /* between 0.08 - 0.12 em */
+    color: #e6e6e6; /* slightly darker soft white */
+    opacity: 0.98;
+    font-size: clamp(1.25rem, 3.2vw, 2.2rem); /* slightly reduced from text-5xl */
+    display: inline-block;
+    padding: 0 0.6rem; /* extra breathing room between items */
+    word-spacing: 0.35rem; /* more space between words */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle outlined variant for select words (less contrast than before) */
+.running-text.stroke-subtle {
+    color: transparent;
+    -webkit-text-stroke: 0.6px rgba(230,230,230,0.12); /* more subtle stroke */
+    -webkit-text-fill-color: transparent;
+    opacity: 0.96;
+}
+
+/* Ensure links or global utilities don't override spacing */
+.running-text.mx-8 { margin-left: 2rem; margin-right: 2rem; }
+
+
+.swal2-confirm:focus,
+.swal2-confirm:active {
+    color: #1a1a1a !important;
+}

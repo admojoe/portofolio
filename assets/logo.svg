@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 220">
+
+  <!-- Rounded Box -->
+  <rect x="40" y="30" width="160" height="160" rx="34"
+        fill="#111111" stroke="#2A2A2A" stroke-width="6"/>
+
+  <!-- A (optical centered lower) -->
+  <text x="120" y="142"
+        text-anchor="middle"
+        font-family="Leelawadee UI, sans-serif"
+        font-size="110"
+        font-weight="700"
+        fill="#EDEDED">
+    A
+  </text>
+
+  <!-- ADMOJOE -->
+  <text x="250" y="115"
+        font-family="Montserrat, sans-serif"
+        font-size="92"
+        font-weight="600"
+        letter-spacing="14"
+        fill="#EDEDED">
+    ADMOJOE
+  </text>
+
+  <!-- DESIGN & BUILD -->
+  <text x="255" y="170"
+        font-family="Montserrat, sans-serif"
+        font-size="38"
+        font-weight="500"
+        letter-spacing="18"
+        fill="#B4976B">
+    DESIGN &amp; BUILD
+  </text>
+
+</svg>

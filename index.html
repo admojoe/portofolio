@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMOJOE | Design & Build - Architecture & Construction</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231C1A18'/%3E%3Ctext x='50' y='65' font-size='75' font-weight='700' text-anchor='middle' fill='%23FFFFFF' font-family='Arial, sans-serif'%3EA%3C/text%3E%3C/svg%3E" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Oswald:wght@300;400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+
+    <!-- Tailwind Config with Content Purging -->
+    <script>
+        tailwind.config = {
+            content: ['./index.html', './about.html', './services.html', './projects.html', './journal.html', './contact.html', './commercial.html', './residential.html', './audio-video.html', './navbar.html'],
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#FFFFFF',
+                            goldLight: '#F3F4F6',
+                            dark: '#1C1A18',
+                            charcoal: '#2A2723',
+                            gray: '#4B463F'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'Poppins', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('assets/images/featured-commercial-placeholder.webp')",
+                        'blueprint': "linear-gradient(rgba(10,10,10,0.92), rgba(10,10,10,0.96)), url('assets/images/opusdaya01.webp')"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Oswald:wght@300;400;500;700&display=swap" crossorigin>
+    <link rel="preload" as="script" href="https://cdn.tailwindcss.com">
+    
+    <!-- Preload Blog Section Images -->
+    <link rel="preload" as="image" href="assets/images/journal/auditorium/journal-auditorium.webp">
+    <link rel="preload" as="image" href="https://raw.githubusercontent.com/farazc60/Project-Images/refs/heads/main/Apex%20Construction%20Website%20Template/high-tower-with-futuristic-design.jpg">
+    <link rel="preload" as="image" href="https://raw.githubusercontent.com/farazc60/Project-Images/refs/heads/main/Apex%20Construction%20Website%20Template/historic-building-restoration.jpg">
+    
+</head>
+<body class="antialiased selection:bg-white selection:text-black">
+
+    <!-- Sticky Call Widget -->
+    <div class="fixed right-0 top-1/2 z-40 transform -translate-y-1/2 flex items-center group">
+        <div class="bg-white text-black py-6 px-3 cursor-pointer hover:pl-5 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] relative overflow-hidden rounded-l-lg" onclick="window.location.href='contact.html'">
+            <div class="absolute inset-0 bg-white/20 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+            <div class="flex flex-col items-center gap-4">
+                <i class="ph-fill ph-phone-call text-xl"></i>
+                <span class="vertical-text font-display font-bold tracking-widest text-xs whitespace-nowrap">CONTACT US</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookies Popup -->
+    <div id="cookie-popup" class="fixed bottom-6 left-6 z-50 bg-brand-charcoal/80 backdrop-blur-md border-l-4 border-white p-6 max-w-sm shadow-lg transform translate-y-[150%] transition-transform duration-500 hidden rounded-r-lg">
+        <button onclick="closeCookies()" class="absolute top-2 right-2 text-gray-500 hover:text-white transition-colors">
+            <i class="ph ph-x text-lg"></i>
+        </button>
+        <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+                <i class="ph-fill ph-cookie text-3xl text-white"></i>
+                <h4 class="font-display text-lg font-bold">Privacy First</h4>
+            </div>
+            <p class="text-sm text-gray-400 leading-relaxed">We use cookies to enhance your architectural journey on our site.</p>
+            <div class="flex gap-4 mt-2">
+                <button onclick="acceptCookies()" class="text-white text-sm font-bold tracking-widest hover:text-gray-200 transition-colors uppercase border-b border-white pb-1">Accept All</button>
+                <button onclick="closeCookies()" class="text-xs text-gray-500 hover:text-white transition-colors">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll To Top -->
+    <button id="scroll-top" class="fixed bottom-8 right-8 z-50 w-16 h-16 flex items-center justify-center opacity-0 translate-y-10 transition-all duration-700 pointer-events-none group">
+        <!-- Text Tooltip -->
+        <span class="absolute right-full mr-4 text-[10px] font-bold tracking-[0.2em] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none uppercase">Elevate</span>
+        
+        <!-- Rotating Outer Ring -->
+        <div class="absolute inset-0 rounded-full border border-white/5 animate-[spin_10s_linear_infinite] group-hover:border-white/30 transition-colors"></div>
+        
+        <!-- SVG Progress Ring -->
+        <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="28" fill="rgba(20,20,20,0.8)" stroke="rgba(255,255,255,0.05)" stroke-width="1" class="backdrop-blur-sm" />
+            <circle id="scroll-progress-circle" cx="30" cy="30" r="28" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="175.9" stroke-dashoffset="175.9" stroke-linecap="round" class="transition-all duration-75" />
+        </svg>
+        
+        <!-- Inner Core -->
+        <div class="relative w-8 h-8 rounded-full flex items-center justify-center overflow-hidden">
+            <!-- Normal Arrow -->
+            <i class="ph-bold ph-arrow-up text-white text-lg group-hover:-translate-y-10 transition-transform duration-500 absolute"></i>
+            <!-- Hover Arrow -->
+            <i class="ph-bold ph-caret-double-up text-white text-lg translate-y-10 group-hover:translate-y-0 transition-transform duration-500 absolute"></i>
+        </div>
+    </button>
+
+    <!-- Navbar Placeholder - Loaded from navbar.html -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
+        <!-- Background with Parallax & Spotlight (image made brighter) -->
+        <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center opacity-100" data-speed="0.5"></div>
+        
+        <!-- Gradient Mesh Overlay: darker on the left, subtle to the right -->
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/50 to-transparent pointer-events-none"></div>
+        <!-- Left-side soft blur to soften transition and preserve depth -->
+        <div class="absolute inset-y-0 left-0 w-1/3 backdrop-blur-sm bg-brand-dark/20 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(197,160,89,0.06),transparent_50%)] pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-16 items-center">
+            
+            <div class="lg:col-span-8 text-left">
+                <div class="inline-flex items-center gap-4 mb-6" data-aos="fade-right">
+                    <div class="w-12 h-[1px] bg-white"></div>
+                    <p class="text-white font-sans tracking-[0.15em] text-xs font-semibold uppercase">Designing Immersive Spaces</p>
+                </div>
+                
+                <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[0.9]">
+                    <span class="block text-white" data-aos="slide-up" data-aos-duration="1000">CRAFTING</span>
+                    <span class="block text-white relative" data-aos="slide-up" data-aos-duration="1000" data-aos-delay="200">
+                        INTERIOR
+                        <span class="absolute top-0 left-0 text-white/30 opacity-50 blur-[2px] select-none">INTERIOR</span>
+                    </span>
+                    <span class="block text-white" data-aos="slide-up" data-aos-duration="1000" data-aos-delay="400">EXPERIENCES</span>
+                </h1>
+                
+                <p class="text-white tracking-wide text-sm font-semibold mb-8" data-aos="fade-up" data-aos-delay="300">Designing with clarity. Integrating with precision.</p>
+                
+                <p class="text-gray-400 max-w-xl text-lg font-light leading-relaxed mb-10 border-l-2 border-white/5 pl-6" data-aos="fade-up" data-aos-delay="400">
+                    We create interior environments where space, lighting, acoustics, and audio-visual systems work as one seamless experience — thoughtfully designed, technically refined, and built to perform.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#projects" class="btn-magnetic bg-white text-black px-8 py-3 font-display font-bold tracking-wide text-center hover:bg-white border border-white hover:border-white text-sm">
+                        OUR PORTFOLIO
+                    </a>
+                    <button id="play-reel" class="group flex items-center gap-4 px-6 transition-colors text-gray-300 hover:text-white">
+                        <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center group-hover:border-white group-hover:scale-110 transition-all">
+                            <i class="ph-fill ph-play text-xl group-hover:text-white"></i>
+                        </div>
+                        <span class="font-display font-bold tracking-widest text-sm border-b border-transparent group-hover:border-white transition-all">WATCH FILM</span>
+                    </button>
+                </div>
+            </div>
+
+                <!-- Hero Statistic/Visual -->
+                <div class="hidden lg:block lg:col-span-4">
+                    <div class="relative p-10 rounded-xl max-w-sm ml-auto"
+                     data-aos="fade-left" data-aos-delay="800"
+                     style="background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(10,10,10,0.45); backdrop-filter: blur(10px) saturate(140%); -webkit-backdrop-filter: blur(10px) saturate(140%);">
+                        <div class="absolute -top-4 -right-4 w-20 h-20 bg-white rounded-full blur-[40px] opacity-15"></div>
+                    <div class="flex justify-between items-start mb-8">
+                        <div>
+                            <p class="text-xs text-white uppercase tracking-widest mb-1">Studio Status</p>
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                <span class="font-display font-bold text-white">AVAILABLE FOR NEW PROJECTS</span>
+                            </div>
+                        </div>
+                        <i class="ph ph-trend-up text-3xl text-white"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-4xl font-display font-bold text-white">COMMERCIAL INTERIOR<span class="text-white">+</span></h3>
+                            <p class="text-sm text-white/80">AUDIO VISUAL SPACE</p>
+                        </div>
+                        <div class="h-[1px] bg-white/10"></div>
+                        <div>
+                            <h3 class="text-4xl font-display font-bold text-white">98<span class="text-white">%</span></h3>
+                            <p class="text-sm text-white/80">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 right-10 flex flex-col items-center gap-2" data-aos="fade-in" data-aos-delay="1000">
+            <span class="writing-vertical text-xs tracking-[0.3em] text-gray-500 uppercase rotate-180" style="writing-mode: vertical-rl;">Scroll Down</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Marquee Banner -->
+    <div class="bg-black border-y border-brand-charcoal relative z-20 py-5 overflow-hidden cursor-pointer group">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-multiply"></div>
+        <div class="marquee-container flex whitespace-nowrap">
+            <!-- First set -->
+            <span class="running-text text-5xl font-semibold mx-8">VISION •</span>
+            <span class="running-text text-5xl font-semibold mx-8 stroke-subtle">SPACE •</span>
+            <span class="running-text text-5xl font-semibold mx-8">EXPERIENCE •</span>
+            <span class="running-text text-5xl font-semibold mx-8 stroke-subtle">FORM •</span>
+            <span class="running-text text-5xl font-semibold mx-8">CONCEPT •</span>
+            <span class="text-gray-300 font-display text-5xl font-bold mx-8 italic stroke-text text-transparent" style="-webkit-text-stroke: 1px #D0D0D0;">SPACE •</span>
+            <span class="text-gray-300 font-display text-5xl font-bold mx-8 italic">CRAFT •</span>
+            
+            <!-- Duplicate set for seamless looping -->
+            <span class="running-text text-5xl font-semibold mx-8">VISION •</span>
+            <span class="running-text text-5xl font-semibold mx-8 stroke-subtle">SPACE •</span>
+            <span class="running-text text-5xl font-semibold mx-8">EXPERIENCE •</span>
+            <span class="running-text text-5xl font-semibold mx-8 stroke-subtle">FORM •</span>
+            <span class="running-text text-5xl font-semibold mx-8">CONCEPT •</span>
+            <span class="text-gray-300 font-display text-5xl font-bold mx-8 italic stroke-text text-transparent" style="-webkit-text-stroke: 1px #D0D0D0;">SPACE •</span>
+            <span class="text-gray-300 font-display text-5xl font-bold mx-8 italic">CRAFT •</span>
+        </div>
+    </div>
+
+    <!-- About Section (Brief) -->
+    <section class="py-40 bg-brand-dark relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-dark/80 skew-x-12 transform translate-x-20 pointer-events-none"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div data-aos="fade-right">
+                    <span class="text-white tracking-[0.15em] text-xs font-bold uppercase mb-4 block">About Us</span>
+                    <h2 class="font-display text-5xl md:text-6xl font-bold mb-8 leading-tight">
+                        DESIGNING VISION <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white">BUILDING REALITY</span>
+                    </h2>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        We design interior environments where space, material, lighting, and audio-visual systems work as one cohesive experience. By integrating design and technology from the beginning, we ensure every detail performs seamlessly, both aesthetically and technically.
+                    </p>
+                    
+                    <!-- Feature list removed as requested -->
+
+                    <a href="#about-full" class="inline-block border-b border-gray-500 pb-1 text-gray-300 font-display tracking-wide hover:text-white hover:border-white transition-colors">
+                        READ MORE ABOUT US
+                    </a>
+                </div>
+                
+                <div class="relative" data-aos="fade-left">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4 mt-12">
+                            <img src="assets/images/office_interior.webp" class="w-full h-64 object-cover rounded-xl shadow-lg transition-all duration-700 hover:scale-[1.02]" alt="Site" loading="lazy" decoding="async" width="500" height="256">
+                            <div class="bg-brand-gray p-8 rounded-xl border border-white/5">
+                                <h3 class="font-display text-3xl font-bold text-white mb-1 counter" data-target="24">DETAIL</h3>
+                                <p class="text-xs uppercase tracking-wide text-gray-500">DRIVEN</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-brand-gray p-8 rounded-xl border border-white/5 text-right">
+                                <h3 class="font-display text-3xl font-bold text-white mb-1 counter" data-target="150">SPATIAL</h3>
+                                <p class="text-xs uppercase tracking-wide text-gray-500">DESIGN</p>
+                            </div>
+                            <img src="assets/images/office_interior03.webp" class="w-full h-80 object-cover rounded-xl shadow-lg transition-all duration-700 hover:scale-[1.02]" alt="Architect" loading="lazy" decoding="async" width="500" height="320">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Full) -->
+    <section id="about-full" class="py-40 bg-brand-dark relative overflow-hidden border-t border-white/5">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-dark/80 skew-x-12 transform translate-x-20 pointer-events-none"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+                <!-- Left Column: Images + Features -->
+                <div class="space-y-12">
+                    <!-- Images -->
+                    <div class="relative" data-aos="fade-right">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-4 mt-12">
+                                <img src="assets/images/office_interior02.webp" class="w-full h-64 object-cover rounded-lg shadow-2xl transition-all duration-700 hover:scale-[1.02]" alt="Interior Design" loading="lazy" decoding="async" width="500" height="256">
+                                <div class="bg-brand-gray p-6 rounded-lg border border-white/5">
+                                    <h3 class="font-display text-3xl font-bold text-white mb-1">MATERIAL</h3>
+                                    <p class="text-xs uppercase tracking-wide text-gray-500">EXPRESSION</p>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-brand-gray p-6 rounded-lg border border-white/5 text-right">
+                                    <h3 class="font-display text-3xl font-bold text-white mb-1">DESIGN</h3>
+                                    <p class="text-xs uppercase tracking-wide text-gray-500">INTENT</p>
+                                </div>
+                                <img src="assets/images/office_interior04.webp" class="w-full h-80 object-cover rounded-lg shadow-2xl transition-all duration-700 hover:scale-[1.02]" alt="Audio Visual Space" loading="lazy" decoding="async" width="500" height="320">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features Below Images -->
+                    <div data-aos="fade-up" class="mt-16 pt-16 border-t border-white/5">
+                        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                            <li class="flex items-center gap-4 text-gray-400">
+                                <i class="ph-fill ph-check-circle text-white text-3xl flex-shrink-0"></i>
+                                <span class="font-display tracking-wide text-sm font-semibold leading-snug">Interior Design & Spatial Planning</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-gray-400">
+                                <i class="ph-fill ph-check-circle text-white text-3xl flex-shrink-0"></i>
+                                <span class="font-display tracking-wide text-sm font-semibold leading-snug">Integrated Audio Visual Systems</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-gray-400">
+                                <i class="ph-fill ph-check-circle text-white text-3xl flex-shrink-0"></i>
+                                <span class="font-display tracking-wide text-sm font-semibold leading-snug">Acoustic & Lighting Coordination</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-gray-400">
+                                <i class="ph-fill ph-check-circle text-white text-3xl flex-shrink-0"></i>
+                                <span class="font-display tracking-wide text-sm font-semibold leading-snug">End-to-End Design & Build Execution</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column: Headline + Text -->
+                <div data-aos="fade-left">
+                    <span class="text-white tracking-[0.15em] text-xs font-bold uppercase mb-4 block">About The Studio</span>
+                    <h2 class="font-display text-5xl md:text-6xl font-bold mb-8 leading-tight">
+                        Integrated Interior <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white">Audio Visual Environments</span>
+                    </h2>
+                    
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                        We craft interior environments that are not only visually refined, but technically integrated. We merge spatial design, acoustic strategy, and audio-visual systems into one seamless design & build solution. Every space is engineered to perform — aesthetically, functionally, and technologically.
+                    </p>
+
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        From private residences and commercial interiors to immersive presentation rooms and entertainment spaces, we approach every project with clarity and precision. Our process bridges concept, detailing, and on-site execution — ensuring that design intent translates flawlessly into reality.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-40 bg-brand-dark overflow-hidden">
+        <div class="container mx-auto px-6 mb-16 text-center" data-aos="fade-up">
+            <span class="text-white tracking-[0.15em] text-sm font-semibold">WHAT WE DO</span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold mt-4">EXPERTISE IN ACTION</h2>
+        </div>
+
+        <!-- Swiper Container -->
+        <div class="swiper serviceSwiper swiper-container-padding w-full max-w-7xl mx-auto px-4">
+            <div class="swiper-wrapper">
+                <!-- Service 1 -->
+                <div class="swiper-slide !w-[300px] md:!w-[400px]">
+                    <div class="group relative h-[500px] rounded-xl overflow-hidden cursor-pointer shadow-lg border border-white/5">
+                        <img src="assets/images/commercial-1000.webp" srcset="assets/images/commercial-500.webp 500w, assets/images/commercial-1000.webp 1000w" sizes="(max-width:768px) 300px, 400px" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Commercial" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-80"></div>
+                        
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                            <i class="ph ph-buildings text-5xl text-white mb-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"></i>
+                            <h3 class="font-display text-3xl font-bold mb-2">Commercial</h3>
+                            <p class="text-gray-300 text-sm transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                Workspaces designed for productivity, efficiency, and long-term business growth.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="swiper-slide !w-[300px] md:!w-[400px]">
+                    <div class="group relative h-[500px] rounded-xl overflow-hidden cursor-pointer shadow-lg border border-white/5">
+                        <img src="assets/images/residential-1000.webp" srcset="assets/images/residential-500.webp 500w, assets/images/residential-1000.webp 1000w" sizes="(max-width:768px) 300px, 400px" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Residential" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-80"></div>
+                        
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                            <i class="ph ph-house-line text-5xl text-white mb-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"></i>
+                            <h3 class="font-display text-3xl font-bold mb-2">Residential</h3>
+                            <p class="text-gray-300 text-sm transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                Timeless living spaces crafted for comfort, elegance, and everyday luxury.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Service 3 -->
+                <!-- Service 4 -->
+                <div class="swiper-slide !w-[300px] md:!w-[400px]">
+                    <div class="group relative h-[500px] rounded-xl overflow-hidden cursor-pointer shadow-lg border border-white/5">
+                        <img src="assets/images/architecture-1000.webp" srcset="assets/images/architecture-500.webp 500w, assets/images/architecture-1000.webp 1000w" sizes="(max-width:768px) 300px, 400px" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Management" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-80"></div>
+                        
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                            <i class="ph ph-compass-tool text-5xl text-white mb-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"></i>
+                            <h3 class="font-display text-3xl font-bold mb-2">Architecture</h3>
+                            <p class="text-gray-400 text-sm transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                From concept to construction, shaping spaces with clarity and purpose.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="swiper-slide !w-[300px] md:!w-[400px]">
+                    <div class="group relative h-[500px] rounded-xl overflow-hidden cursor-pointer shadow-lg border border-white/5">
+                        <img src="assets/images/audio-video-1000.webp" srcset="assets/images/audio-video-500.webp 500w, assets/images/audio-video-1000.webp 1000w" sizes="(max-width:768px) 300px, 400px" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Audio Video" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-80"></div>
+                        
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                            <i class="ph ph-speaker-high text-5xl text-white mb-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"></i>
+                            <h3 class="font-display text-3xl font-bold mb-2">Audio Video</h3>
+                            <p class="text-gray-400 text-sm transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                Integrated audio-visual solutions designed for seamless performance and immersive experiences.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination mt-12"></div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio -->
+    <section id="projects" class="py-40 bg-brand-charcoal">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between lg:items-end mb-16 gap-6" data-aos="fade-up">
+                <div>
+                    <span class="text-white tracking-[0.15em] text-sm font-semibold">LATEST WORK</span>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mt-3">SELECTED PROJECTS</h2>
+                </div>
+                <div class="flex gap-6 flex-wrap">
+                    <a href="projects.html" class="px-6 py-2 border border-white text-white font-bold tracking-wide text-xs hover:bg-white hover:text-black transition-colors rounded-md">ALL</a>
+                    <a href="commercial.html" class="px-6 py-2 border border-white/20 text-gray-400 font-bold tracking-wide text-xs hover:bg-white hover:text-black hover:border-white transition-colors rounded-md">COMMERCIAL</a>
+                    <a href="residential.html" class="px-6 py-2 border border-white/20 text-gray-400 font-bold tracking-wide text-xs hover:bg-white hover:text-black hover:border-white transition-colors rounded-md">RESIDENTIAL</a>
+                    <a href="audio-video.html" class="px-6 py-2 border border-white/20 text-gray-400 font-bold tracking-wide text-xs hover:bg-white hover:text-black hover:border-white transition-colors rounded-md">AUDIO VIDEO</a>
+                </div>
+            </div>
+
+            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projects will be loaded dynamically from projects.json -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-40 bg-blueprint bg-fixed bg-cover relative" style="filter: brightness(1.35) contrast(1.08);">
+            <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center testimonial-glass p-14 rounded-xl">
+                <i class="ph-fill ph-quotes text-6xl text-white mb-8 inline-block opacity-80"></i>
+                
+                <div class="swiper testimonialSwiper pb-12">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <p class="font-display text-2xl md:text-3xl leading-relaxed font-light italic mb-8 text-white">
+                                "A seamless design & build process that transforms ideas into meaningful spaces, delivered with clarity, craftsmanship, and lasting value."
+                            </p>
+                            <h4 class="font-bold text-white text-lg tracking-wide uppercase">Roy Ananta</h4>
+                            <p class="text-sm text-gray-500">CEO, PT Desibel</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="font-display text-2xl md:text-3xl leading-relaxed font-light italic mb-8 text-white">
+                                "From concept to completion, every detail is shaped through thoughtful design and precise execution. We create spaces that are both functional and timeless."
+                            </p>
+                            <h4 class="font-bold text-white text-lg tracking-wide uppercase">Gilang</h4>
+                            <p class="text-sm text-gray-500">Founder, Gilang Studio Architect</p>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination testimonial-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-40 bg-brand-charcoal">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between lg:items-end mb-16 gap-6" data-aos="fade-up">
+                <div>
+                    <span class="text-white tracking-[0.15em] text-sm font-semibold">INSIGHTS</span>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mt-3">ARCHITECTURAL JOURNAL</h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[350px]">
+                <!-- Article 1: Big Feature (Spans 2x2 on desktop) -->
+                <article class="group relative md:col-span-2 md:row-span-2 overflow-hidden rounded-sm cursor-pointer border border-white/5">
+                    <img src="assets/images/journal/auditorium/journal-auditorium.webp" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Sustainable Architecture" loading="eager" fetchpriority="high" decoding="async" width="700" height="700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity"></div>
+                    <div class="absolute inset-0 p-8 md:p-12 flex flex-col justify-end items-start">
+                         <span class="bg-white text-black text-xs font-bold px-3 py-1 mb-4 uppercase tracking-widest">Featured Story</span>
+                         <h3 class="font-display text-3xl md:text-5xl font-bold text-white mb-4 leading-none group-hover:text-white transition-colors">THE MAKING OF A SPACE</h3>
+                         <p class="text-gray-400 line-clamp-2 max-w-lg mt-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">Exploring the transformation of an auditorium interior from construction to completion.</p>
+                         <a href="journal/auditorium-interior.html" class="mt-8 inline-flex items-center gap-3 text-sm font-bold tracking-widest text-white border-b border-white pb-1 hover:border-opacity-50 transition-all">
+                            READ ARTICLE <i class="ph-bold ph-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                         </a>
+                    </div>
+                </article>
+
+                <!-- Article 2: Small Corner Card (Now: New Case Study placeholder) -->
+                <article class="group relative overflow-hidden rounded-sm cursor-pointer border border-white/5 minimalist-card">
+                    <div class="relative z-10 p-10 md:p-12 lg:p-16 minimalist-card__content text-left flex items-center">
+                        <div>
+                            <i class="ph-duotone ph-newspaper text-4xl text-gray-300 mb-4"></i>
+                            <h3 class="font-display text-2xl font-bold text-white uppercase mb-1">NEW CASE STUDY</h3>
+                            <p class="text-gray-300 text-sm font-semibold tracking-widest">Coming Soon</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3: Minimalist Solid-Color Block -->
+                <article class="group relative overflow-hidden rounded-sm cursor-pointer border border-white/5 minimalist-card">
+                    <div class="relative z-10 p-10 md:p-12 lg:p-16 minimalist-card__content text-left">
+                        <i class="ph-duotone ph-newspaper text-5xl text-gray-300 mb-6"></i>
+                        <h3 class="font-display text-3xl font-bold text-white uppercase mb-3">EXTENDED PORTFOLIO</h3>
+                        <p class="text-gray-300 text-sm max-w-md mb-6">Explore selected works and full case studies on Behance.</p>
+                        <a href="https://www.behance.net/admojoe" target="_blank" rel="noopener noreferrer" class="text-sm font-bold tracking-widest text-gray-300 hover:text-white transition-colors inline-flex items-center gap-2">VIEW ON BEHANCE <i class="ph-bold ph-arrow-up-right text-sm"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Article 4: Wide Editorial Banner -->
+                <article class="group relative md:col-span-3 overflow-hidden rounded-sm cursor-pointer border border-white/5">
+                    <img src="assets/images/journal/auditorium/journal-auditorium-banner.webp" alt="Timeless Design and Architecture" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" loading="eager" decoding="async" width="1400" height="350">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    <div class="absolute inset-0 p-8 md:p-16 flex flex-col justify-end h-full min-h-[350px]">
+                        <span class="text-xs text-gray-400 font-display tracking-widest uppercase mb-4">Design Trends</span>
+                        <h3 class="font-display text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">TIMELESS DESIGN AND ARCHITECTURE</h3>
+                        <p class="text-gray-300 text-sm md:text-base mb-8 leading-relaxed max-w-2xl">Explore how we create spaces that combine form and function, showcasing beautiful architecture that stands the test of time.</p>
+                        <!-- CTA removed as requested -->
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-[#050505] pt-40 pb-8 border-t border-white/5 relative">
+        
+        <div class="container mx-auto px-6 mb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div>
+                    <span class="text-white tracking-[0.3em] text-sm font-bold">GET IN TOUCH</span>
+                    <h2 class="font-display text-5xl font-bold mt-3 mb-8">START YOUR PROJECT</h2>
+                    
+                    <form id="contactForm" action="https://formsubmit.co/admojoe.design@gmail.com" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="group relative">
+                                <input type="text" name="user_name" placeholder="Name" required class="w-full bg-transparent border-b border-gray-700 py-4 focus:outline-none focus:border-white transition-colors text-white placeholder-gray-500">
+                            </div>
+                            <div class="group relative">
+                                <input type="email" name="user_email" placeholder="Email" required class="w-full bg-transparent border-b border-gray-700 py-4 focus:outline-none focus:border-white transition-colors text-white placeholder-gray-500">
+                            </div>
+                        </div>
+                        <div class="group relative">
+                            <select name="service_type" class="w-full bg-transparent border-b border-gray-700 py-4 focus:outline-none focus:border-white transition-colors text-gray-500">
+                                <option>Select Service</option>
+                                <option>Commercial Construction</option>
+                                <option>Residential Build</option>
+                                <option>Renovation</option>
+                            </select>
+                        </div>
+                        <div class="group relative">
+                            <textarea rows="4" name="message" placeholder="Project Details" required class="w-full bg-transparent border-b border-gray-700 py-4 focus:outline-none focus:border-white transition-colors text-white placeholder-gray-500"></textarea>
+                        </div>
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <button type="submit" class="mt-8 btn-magnetic px-10 py-4 border border-white/20 font-display font-bold tracking-wide text-white hover:border-white">
+                            SEND PROPOSAL
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Footer Info -->
+                <div class="flex flex-col justify-between pl-0 lg:pl-16">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
+                        <div>
+                            <h4 class="text-white font-bold mb-6 font-display tracking-wide text-lg">HEADQUARTERS</h4>
+                            <p class="text-gray-400 mb-4 leading-loose">Jawa Barat, Kab. Bekasi, Tarumajaya, 17214</p>
+                            <a href="mailto:info@admojoe.id" class="text-white block hover:text-gray-300 transition-colors mb-2">info@admojoe.id</a>
+                            <a href="tel:+6282113454885" class="text-gray-400 block hover:text-white transition-colors">+6282113454885</a>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold mb-6 font-display tracking-wide text-lg">LINKS</h4>
+                            <ul class="space-y-3 text-gray-400">
+                                <li><a href="careers.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="ph ph-caret-right"></i> Careers</a></li>
+                                <li><a href="investor-relations.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="ph ph-caret-right"></i> Investors</a></li>
+                                <li><a href="newsroom.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="ph ph-caret-right"></i> Press & Media</a></li>
+                                <li><a href="privacy-policy.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="ph ph-caret-right"></i> Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter removed as requested -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Big Footer Text -->
+        <div class="border-t border-white/10 pt-8">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">© 2025 ADMOJOE Design & Build. All rights reserved.</p>
+
+                <!-- Credits -->
+                <div class="text-sm text-gray-500">
+                    Based In Indonesia
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+    <!-- Load Navbar from External File -->
+    <script>
+        async function loadNavbar() {
+            try {
+                const response = await fetch('navbar.html');
+                if (response.ok) {
+                    const html = await response.text();
+                    document.getElementById('navbar-placeholder').innerHTML = html;
+                    
+                    // Re-initialize navbar functionality after loading
+                    // Wait for jQuery to be available via script.js
+                    if (typeof window.initializeNavbar === 'function') {
+                        window.initializeNavbar();
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading navbar:', error);
+            }
+        }
+        
+        // Load navbar when DOM is ready but before other scripts
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadNavbar);
+        } else {
+            loadNavbar();
+        }
+    </script>
+
+    <script src="loadProjects.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        // Load featured projects and initialize filters on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProjects(null, true);
+            initializFilters();
+        });
+    </script>
+    </script>
+</body>
+</html>

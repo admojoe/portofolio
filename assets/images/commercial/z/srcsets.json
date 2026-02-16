@@ -1,0 +1,22 @@
+{
+  "commercial-z-1": {
+    "webp": "commercial-z-1-400w.webp 400w, commercial-z-1-800w.webp 800w, commercial-z-1-1200w.webp 1200w, commercial-z-1-2400w.webp 2400w",
+    "jpg": "commercial-z-1-400w.jpg 400w, commercial-z-1-800w.jpg 800w, commercial-z-1-1200w.jpg 1200w, commercial-z-1-2400w.jpg 2400w"
+  },
+  "commercial-z-2": {
+    "webp": "commercial-z-2-400w.webp 400w, commercial-z-2-800w.webp 800w, commercial-z-2-1200w.webp 1200w, commercial-z-2-2400w.webp 2400w",
+    "jpg": "commercial-z-2-400w.jpg 400w, commercial-z-2-800w.jpg 800w, commercial-z-2-1200w.jpg 1200w, commercial-z-2-2400w.jpg 2400w"
+  },
+  "commercial-z-3": {
+    "webp": "commercial-z-3-400w.webp 400w, commercial-z-3-800w.webp 800w, commercial-z-3-1200w.webp 1200w, commercial-z-3-2400w.webp 2400w",
+    "jpg": "commercial-z-3-400w.jpg 400w, commercial-z-3-800w.jpg 800w, commercial-z-3-1200w.jpg 1200w, commercial-z-3-2400w.jpg 2400w"
+  },
+  "commercial-z-4": {
+    "webp": "commercial-z-4-400w.webp 400w, commercial-z-4-800w.webp 800w, commercial-z-4-1200w.webp 1200w, commercial-z-4-2400w.webp 2400w",
+    "jpg": "commercial-z-4-400w.jpg 400w, commercial-z-4-800w.jpg 800w, commercial-z-4-1200w.jpg 1200w, commercial-z-4-2400w.jpg 2400w"
+  },
+  "commercial-z-5": {
+    "webp": "commercial-z-5-400w.webp 400w, commercial-z-5-800w.webp 800w, commercial-z-5-1200w.webp 1200w, commercial-z-5-2400w.webp 2400w",
+    "jpg": "commercial-z-5-400w.jpg 400w, commercial-z-5-800w.jpg 800w, commercial-z-5-1200w.jpg 1200w, commercial-z-5-2400w.jpg 2400w"
+  }
+}
