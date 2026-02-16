@@ -70,7 +70,7 @@
 <body class="antialiased selection:bg-white selection:text-black">
 
     <!-- Sticky Call Widget -->
-    <div class="fixed right-0 top-1/2 z-40 transform -translate-y-1/2 flex items-center group">
+    <div class="hidden md:flex fixed right-0 top-1/2 z-40 transform -translate-y-1/2 items-center group">
         <div class="bg-white text-black py-6 px-3 cursor-pointer hover:pl-5 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] relative overflow-hidden rounded-l-lg" onclick="window.location.href='contact.html'">
             <div class="absolute inset-0 bg-white/20 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
             <div class="flex flex-col items-center gap-4">
@@ -135,7 +135,7 @@
         <div class="absolute inset-y-0 left-0 w-1/3 backdrop-blur-sm bg-brand-dark/20 pointer-events-none"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(197,160,89,0.06),transparent_50%)] pointer-events-none"></div>
 
-        <div class="container mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-16 items-center">
+        <div class="container mx-auto px-4 md:px-6 relative z-10 grid lg:grid-cols-12 gap-6 md:gap-16 items-center">
             
             <div class="lg:col-span-8 text-left">
                 <div class="inline-flex items-center gap-4 mb-6" data-aos="fade-right">
@@ -203,7 +203,7 @@
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 right-10 flex flex-col items-center gap-2" data-aos="fade-in" data-aos-delay="1000">
+        <div class="hidden md:flex absolute bottom-10 right-10 flex-col items-center gap-2" data-aos="fade-in" data-aos-delay="1000">
             <span class="writing-vertical text-xs tracking-[0.3em] text-gray-500 uppercase rotate-180" style="writing-mode: vertical-rl;">Scroll Down</span>
             <div class="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
         </div>
@@ -214,31 +214,31 @@
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-multiply"></div>
         <div class="marquee-container flex whitespace-nowrap">
             <!-- First set -->
-            <span class="running-text text-5xl font-semibold mx-8">VISION •</span>
-            <span class="running-text text-5xl font-semibold mx-8 stroke-subtle">SPACE •</span>
-            <span class="running-text text-5xl font-semibold mx-8">EXPERIENCE •</span>
-            <span class="running-text text-5xl font-semibold mx-8 stroke-subtle">FORM •</span>
-            <span class="running-text text-5xl font-semibold mx-8">CONCEPT •</span>
-            <span class="text-gray-300 font-display text-5xl font-bold mx-8 italic stroke-text text-transparent" style="-webkit-text-stroke: 1px #D0D0D0;">SPACE •</span>
-            <span class="text-gray-300 font-display text-5xl font-bold mx-8 italic">CRAFT •</span>
+            <span class="running-text text-2xl md:text-5xl font-semibold mx-4 md:mx-8">VISION •</span>
+            <span class="running-text text-2xl md:text-5xl font-semibold mx-4 md:mx-8 stroke-subtle">SPACE •</span>
+            <span class="running-text text-2xl md:text-5xl font-semibold mx-4 md:mx-8">EXPERIENCE •</span>
+            <span class="running-text text-2xl md:text-5xl font-semibold mx-4 md:mx-8 stroke-subtle">FORM •</span>
+            <span class="running-text text-2xl md:text-5xl font-semibold mx-4 md:mx-8">CONCEPT •</span>
+            <span class="text-gray-300 font-display text-2xl md:text-5xl font-bold mx-4 md:mx-8 italic stroke-text text-transparent" style="-webkit-text-stroke: 1px #D0D0D0;">SPACE •</span>
+            <span class="text-gray-300 font-display text-2xl md:text-5xl font-bold mx-4 md:mx-8 italic">CRAFT •</span>
             
             <!-- Duplicate set for seamless looping -->
-            <span class="running-text text-5xl font-semibold mx-8">VISION •</span>
-            <span class="running-text text-5xl font-semibold mx-8 stroke-subtle">SPACE •</span>
-            <span class="running-text text-5xl font-semibold mx-8">EXPERIENCE •</span>
-            <span class="running-text text-5xl font-semibold mx-8 stroke-subtle">FORM •</span>
-            <span class="running-text text-5xl font-semibold mx-8">CONCEPT •</span>
-            <span class="text-gray-300 font-display text-5xl font-bold mx-8 italic stroke-text text-transparent" style="-webkit-text-stroke: 1px #D0D0D0;">SPACE •</span>
-            <span class="text-gray-300 font-display text-5xl font-bold mx-8 italic">CRAFT •</span>
+            <span class="running-text text-2xl md:text-5xl font-semibold mx-4 md:mx-8">VISION •</span>
+            <span class="running-text text-2xl md:text-5xl font-semibold mx-4 md:mx-8 stroke-subtle">SPACE •</span>
+            <span class="running-text text-2xl md:text-5xl font-semibold mx-4 md:mx-8">EXPERIENCE •</span>
+            <span class="running-text text-2xl md:text-5xl font-semibold mx-4 md:mx-8 stroke-subtle">FORM •</span>
+            <span class="running-text text-2xl md:text-5xl font-semibold mx-4 md:mx-8">CONCEPT •</span>
+            <span class="text-gray-300 font-display text-2xl md:text-5xl font-bold mx-4 md:mx-8 italic stroke-text text-transparent" style="-webkit-text-stroke: 1px #D0D0D0;">SPACE •</span>
+            <span class="text-gray-300 font-display text-2xl md:text-5xl font-bold mx-4 md:mx-8 italic">CRAFT •</span>
         </div>
     </div>
 
     <!-- About Section (Brief) -->
-    <section class="py-40 bg-brand-dark relative overflow-hidden">
+    <section class="py-20 md:py-40 bg-brand-dark relative overflow-hidden">
         <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-dark/80 skew-x-12 transform translate-x-20 pointer-events-none"></div>
         
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-24 items-center">
                 <div data-aos="fade-right">
                     <span class="text-white tracking-[0.15em] text-xs font-bold uppercase mb-4 block">About Us</span>
                     <h2 class="font-display text-5xl md:text-6xl font-bold mb-8 leading-tight">
@@ -278,11 +278,11 @@
     </section>
 
     <!-- About Section (Full) -->
-    <section id="about-full" class="py-40 bg-brand-dark relative overflow-hidden border-t border-white/5">
+    <section id="about-full" class="py-20 md:py-40 bg-brand-dark relative overflow-hidden border-t border-white/5">
         <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-dark/80 skew-x-12 transform translate-x-20 pointer-events-none"></div>
         
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-24 items-start">
                 <!-- Left Column: Images + Features -->
                 <div class="space-y-12">
                     <!-- Images -->
@@ -348,8 +348,8 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-40 bg-brand-dark overflow-hidden">
-        <div class="container mx-auto px-6 mb-16 text-center" data-aos="fade-up">
+    <section id="services" class="py-20 md:py-40 bg-brand-dark overflow-hidden">
+        <div class="container mx-auto px-4 md:px-6 mb-16 text-center" data-aos="fade-up">
             <span class="text-white tracking-[0.15em] text-sm font-semibold">WHAT WE DO</span>
             <h2 class="font-display text-4xl md:text-5xl font-bold mt-4">EXPERTISE IN ACTION</h2>
         </div>
@@ -427,8 +427,8 @@
     </section>
 
     <!-- Projects Portfolio -->
-    <section id="projects" class="py-40 bg-brand-charcoal">
-        <div class="container mx-auto px-6">
+    <section id="projects" class="py-20 md:py-40 bg-brand-charcoal">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="flex flex-col md:flex-row justify-between lg:items-end mb-16 gap-6" data-aos="fade-up">
                 <div>
                     <span class="text-white tracking-[0.15em] text-sm font-semibold">LATEST WORK</span>
@@ -449,8 +449,8 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="py-40 bg-blueprint bg-fixed bg-cover relative" style="filter: brightness(1.35) contrast(1.08);">
-            <div class="container mx-auto px-6 relative z-10">
+    <section class="py-20 md:py-40 bg-blueprint bg-fixed bg-cover relative" style="filter: brightness(1.35) contrast(1.08);">
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
             <div class="max-w-4xl mx-auto text-center testimonial-glass p-14 rounded-xl">
                 <i class="ph-fill ph-quotes text-6xl text-white mb-8 inline-block opacity-80"></i>
                 
@@ -478,8 +478,8 @@
     </section>
 
     <!-- Blog Section -->
-    <section id="blog" class="py-40 bg-brand-charcoal">
-        <div class="container mx-auto px-6">
+    <section id="blog" class="py-20 md:py-40 bg-brand-charcoal">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="flex flex-col md:flex-row justify-between lg:items-end mb-16 gap-6" data-aos="fade-up">
                 <div>
                     <span class="text-white tracking-[0.15em] text-sm font-semibold">INSIGHTS</span>
@@ -539,10 +539,10 @@
     </section>
 
     <!-- Contact & Footer -->
-    <footer id="contact" class="bg-[#050505] pt-40 pb-8 border-t border-white/5 relative">
+    <footer id="contact" class="bg-[#050505] pt-20 md:pt-40 pb-8 border-t border-white/5 relative">
         
-        <div class="container mx-auto px-6 mb-20">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div class="container mx-auto px-4 md:px-6 mb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16">
                 <!-- Contact Form -->
                 <div>
                     <span class="text-white tracking-[0.3em] text-sm font-bold">GET IN TOUCH</span>
@@ -603,7 +603,7 @@
 
         <!-- Big Footer Text -->
         <div class="border-t border-white/10 pt-8">
-            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-gray-500 text-sm">© 2025 ADMOJOE Design & Build. All rights reserved.</p>
 
                 <!-- Credits -->
