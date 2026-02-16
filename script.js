@@ -421,12 +421,17 @@ $(document).ready(function () {
 
   // 8. Video Reel Modal (Mockup)
   $('#play-reel').click(function () {
+    // Responsive width: 95% on mobile, 80% on tablet/desktop
+    let modalWidth = window.innerWidth < 768 ? '95%' : '80%';
+    
     Swal.fire({
       html: '<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/WPTFZWWJX1o?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>',
       showConfirmButton: false,
       background: '#000',
-      width: '80%',
+      width: modalWidth,
+      padding: window.innerWidth < 768 ? '1.5rem' : '2rem',
       showCloseButton: true,
+      iconColor: '#fff',
       allowOutsideClick: true,
       allowEscapeKey: true,
       // Ensure the video stops when the modal is closed (any close method)
