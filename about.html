@@ -60,7 +60,7 @@
 <body class="antialiased selection:bg-brand-gold selection:text-black">
 
     <!-- Sticky Call Widget -->
-    <div class="fixed right-0 top-1/2 z-40 transform -translate-y-1/2 flex items-center group">
+    <div class="hidden md:flex fixed right-0 top-1/2 z-40 transform -translate-y-1/2 items-center group">
         <a href="#contact" class="bg-white text-black py-6 px-3 cursor-pointer hover:pl-5 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] relative overflow-hidden rounded-l-lg flex flex-col items-center gap-4">
             <div class="absolute inset-0 bg-white/20 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
             <div class="flex flex-col items-center gap-4 relative z-10">
@@ -92,11 +92,11 @@
 
     <!-- About Section -->
     <!-- About Section (Brief) -->
-    <section class="py-40 bg-brand-dark relative overflow-hidden">
+    <section class="py-20 md:py-40 bg-brand-dark relative overflow-hidden">
         <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-dark/80 skew-x-12 transform translate-x-20 pointer-events-none"></div>
         
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
                 <div data-aos="fade-right">
                     <span class="text-white tracking-[0.15em] text-xs font-bold uppercase mb-4 block">About Us</span>
                     <h2 class="font-display text-5xl md:text-6xl font-bold mb-8 leading-tight">
@@ -136,11 +136,11 @@
     </section>
 
     <!-- About Section (Full) -->
-    <section id="about-full" class="py-40 bg-brand-dark relative overflow-hidden border-t border-white/5">
+    <section id="about-full" class="py-20 md:py-40 bg-brand-dark relative overflow-hidden border-t border-white/5">
         <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-dark/80 skew-x-12 transform translate-x-20 pointer-events-none"></div>
         
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-start">
                 <!-- Left Column: Images + Features -->
                 <div class="space-y-12">
                     <!-- Images -->
@@ -164,8 +164,8 @@
                     </div>
 
                     <!-- Features Below Images -->
-                    <div data-aos="fade-up" class="mt-32 pt-24 border-t border-white/5">
-                        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <div data-aos="fade-up" class="mt-20 md:mt-32 pt-12 md:pt-24 border-t border-white/5">
+                        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
                             <li class="flex flex-col items-center text-center gap-4">
                                 <i class="ph-fill ph-check-circle text-white text-3xl"></i>
                                 <span class="font-display tracking-tight text-xs font-semibold text-gray-300 leading-relaxed">Interior Design & Spatial Planning</span>
@@ -206,9 +206,9 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-[#050505] pt-40 pb-8 border-t border-white/5 relative">
-        <div class="container mx-auto px-6 mb-20">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <footer id="contact" class="bg-[#050505] pt-20 md:pt-40 pb-8 border-t border-white/5 relative">
+        <div class="container mx-auto px-4 md:px-6 mb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16">
                 <!-- Contact Form -->
                 <div>
                     <span class="text-white tracking-[0.3em] text-sm font-bold">GET IN TOUCH</span>
@@ -268,7 +268,7 @@
 
         <!-- Big Footer Text -->
         <div class="border-t border-white/5 pt-8">
-            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-gray-600 text-sm">© 2025 ADMOJOE Design & Build. All rights reserved.</p>
 
                 <div class="text-sm text-gray-500">
